@@ -1,5 +1,41 @@
+header {
+  text-align: right;
+}
+
+h1 {
+  text-align: center;
+}
+
 .container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
 }
 
+body {
+}
+
+.profile-spacer {
+  width: 10%;
+}
+
+.search-bar {
+  flex-grow: 1;
+  align-self: center;
+  margin-top: 10%;
+}
+
+.search-bar > input {
+  text-align: center;
+  margin-left: 30%;
+  width: 50%;
+}
+
+.profile-spacer + .profile-spacer {
+  margin-left: 2%;
+}
+
+#ps-2 {
+  width: 20%;
+  text-align: center;
+}
