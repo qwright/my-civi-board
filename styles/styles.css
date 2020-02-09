@@ -6,7 +6,7 @@ header {
   top: 0;
   width: 100%;
   text-align: right;
-  background-color: lightgrey;
+  box-shadow: 3px 3px 10px rgb(221, 221, 221);
 }
 
 .profile-img {
@@ -25,8 +25,7 @@ header {
   right: 1em;
   top: 5em;
   background-color: white;
-  border: 0.1em solid black;
-  box-shadow: 0.25em 0.25em grey;
+  box-shadow: 3px 3px 10px rgb(221, 221, 221);
   min-width: 160px;
   height: 3em;
   padding: 12px 16px;
@@ -37,6 +36,13 @@ header {
   display: block;
 }
 
+.logo{
+  float: left;
+  padding-left: 5em;
+  padding-top: 0.5em;
+  
+  
+}
 .container {
   margin-top: 7em;
   display: flex;
@@ -70,5 +76,8 @@ header {
 }
 
 footer {
-  background-color: blue;
+  background-color: rgb(221, 221, 221);
+  padding: 0.25em;
+  color: white;
+  
 }
