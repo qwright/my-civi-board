@@ -10,6 +10,7 @@ header {
   top: 0;
   width: 100%;
   text-align: right;
+  background-color: white;
   box-shadow: 3px 3px 10px rgb(221, 221, 221);
 }
 
@@ -45,6 +46,7 @@ header {
   padding-left: 5em;
   padding-top: 0.5em;
 }
+
 .container {
   margin-top: 7em;
   display: flex;
@@ -68,8 +70,8 @@ header {
 
 .search-bar > input {
   text-align: center;
-  margin-left: 25%;
   width: 50%;
+  margin: 10em 0em 10em 25%;
 }
 
 .profile-spacer + .profile-spacer {
@@ -82,7 +84,7 @@ header {
 }
 
 footer {
-  background-color: rgb(221, 221, 221);
+  background-color: #29abe2;
   padding: 0.25em;
   color: white;
 }
