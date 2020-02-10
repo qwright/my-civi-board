@@ -47,6 +47,18 @@ header {
   padding-top: 0.5em;
 }
 
+.side-nav {
+  font-size: 1em;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+}
+
+.side-dropdown {
+  display: none;
+}
+
 .container {
   margin-top: 5em;
   margin-bottom: 1em;
