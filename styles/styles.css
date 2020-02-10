@@ -48,15 +48,16 @@ header {
 }
 
 .container {
-  margin-top: 7em;
+  margin-top: 5em;
+  margin-bottom: 1em;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .index-banner {
-  width: 100%;
   height: 90%;
+  width: 100%;
 }
 
 .profile-spacer {
@@ -64,14 +65,54 @@ header {
 }
 
 .search-bar {
-  flex-grow: 1;
   align-self: center;
+  flex-grow: 1;
 }
 
 .search-bar > input {
   text-align: center;
-  width: 50%;
   margin: 10em 0em 10em 25%;
+  width: 50%;
+}
+
+.board-content {
+  height: 50em;
+  width: 50%;
+  display: flex;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#post {
+  align-self: center;
+  text-align: center;
+  width: 100%;
+}
+
+.thread-container {
+  text-align: center;
+}
+
+.thread-container > div {
+  display: inline-block;
+  margin: 1em 2em;
+  height: 330px;
+  width: 182px;
+  word-wrap: break-word;
+  overflow: hidden;
+}
+
+.thread-container > div > a > img {
+  border: 1px solid black;
+  height: 200px;
+  width: 180px;
+  margin-bottom: 1px;
+}
+
+#board #ps-1 {
+  border-right: 0.1em white;
+  box-shadow: 3px 0px 10px rgb(221, 221, 221);
 }
 
 .profile-spacer + .profile-spacer {
@@ -79,12 +120,16 @@ header {
 }
 
 #ps-2 {
-  width: 10%;
   text-align: center;
+  width: 10%;
+}
+
+#board #ps-2 {
+  width: 0%;
 }
 
 footer {
   background-color: #29abe2;
-  padding: 0.25em;
   color: white;
+  padding: 0.25em;
 }
