@@ -16,6 +16,8 @@ header {
 
 .profile-img {
   position: relative;
+  float: right;
+  width: 5%;
 }
 
 .profile-img > a > img {
@@ -27,11 +29,11 @@ header {
 .profile-dropdown {
   position: absolute;
   display: none;
-  right: 1em;
+  right: 0em;
   top: 5em;
   background-color: white;
   box-shadow: 3px 3px 10px rgb(221, 221, 221);
-  min-width: 160px;
+  min-width: 180px;
   height: 3em;
   padding: 12px 16px;
   z-index: 1;
