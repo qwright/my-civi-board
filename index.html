@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="styles/styles.css" />
+		<script src="js/script.js"></script>
     <title>MyCiviBoard</title>
   </head>
   <body>
@@ -24,8 +25,10 @@
       <div class="profile-spacer" id="ps-1"></div>
       <div class="search-bar">
 		  <img class="index-banner" src="images/downtown-park1.jpg" alt="downtown-park"/>
-        <input type="text" placeholder="Find your city!" />
-        <button type="submit">Search</button>
+			<form class="search-form" Action="" Method="GET">
+			<input type="text" name ="city" placeholder="Find your city!" />
+			<input type="submit" value= "Click" onClick="redirect(this.form);" value="Search your city!">
+			</form>
       </div>
 	  <div class="profile-spacer" id="ps-2">
 	  </div> 
