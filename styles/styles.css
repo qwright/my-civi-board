@@ -74,7 +74,7 @@ header {
   height: 90%;
   width: 60%;
   margin-left: auto;
-  margin-right:auto;
+  margin-right: auto;
   margin-top: 5em;
   display: block;
 }
@@ -153,86 +153,84 @@ footer {
   padding: 0.25em;
 }
 
-
-  .login {
+.login {
   text-align: center;
   margin: 20px auto;
   width: 20%;
   padding: 50px;
-  
-
-  }
-  .loginbutton{
-    border: none;
-    text-decoration: none;
-    color: #878787;
-    padding: 15px 32px;
-    text-align: center;
-  }
-  .loginbutton:visited{
-    color: #29ABE2;
-  }
-  .login-screen {
-  background-color: #FFF;
+}
+.loginbutton {
+  border: none;
+  text-decoration: none;
+  color: #878787;
+  padding: 15px 32px;
+  text-align: center;
+}
+.loginbutton:visited {
+  color: #29abe2;
+}
+.login-screen {
+  background-color: #fff;
   padding: 20px;
-  border-radius: 5px
-  }
-  
-  .app-title {
+  border-radius: 5px;
+}
+
+.app-title {
   text-align: center;
   padding: 2em;
   color: #777;
   font-weight: bold;
-  }
-  
-  .login-form {
+}
+
+.login-form {
   text-align: center;
-  }
-  .control-group {
+}
+.control-group {
   margin-bottom: 10px;
-  }
-  
-  input {
+}
+
+input {
   text-align: center;
-  background-color: #ECF0F1;
+  background-color: #ecf0f1;
   border: 2px solid transparent;
   border-radius: 3px;
   font-size: 16px;
   font-weight: 200;
   padding: 10px 0;
   width: 250px;
-  transition: border .5s;
-  }
-  
-  input:focus {
-  border: 2px solid #FFB240;
+  transition: border 0.5s;
+}
+
+input:focus {
+  border: 2px solid #ffb240;
   box-shadow: none;
-  }
-  
-  .btn {
-    border: 2px solid transparent;
-    background: #29ABE2;
-    color: #ffffff;
-    font-size: 16px;
-    line-height: 25px;
-    padding: 10px 0;
-    text-decoration: none;
-    text-shadow: none;
-    border-radius: 3px;
-    box-shadow: none;
-    transition: 0.25s;
-    display: block;
-    width: 250px;
-    margin: 0 auto;
-  }
-  
-  .btn:hover {
-    background-color: rgb(37, 128, 167);
-  }
-  
-  .login-link {
-    font-size: 12px;
-    color: #444;
-    display: block;
-    margin-top: 12px;
-  }
+}
+
+.btn {
+  border: 2px solid transparent;
+  background: #29abe2;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 25px;
+  padding: 10px 0;
+  text-decoration: none;
+  text-shadow: none;
+  border-radius: 3px;
+  box-shadow: none;
+  transition: 0.25s;
+  display: block;
+  width: 250px;
+  margin: 0 auto;
+}
+
+.btn:hover {
+  background-color: rgb(37, 128, 167);
+}
+
+.login-link {
+  font-size: 12px;
+  color: #444;
+  display: block;
+  margin-top: 12px;
+}
+
