@@ -1,5 +1,6 @@
 body {
   height: 50em;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 header {
@@ -161,6 +162,16 @@ footer {
   
 
   }
+  .loginbutton{
+    border: none;
+    text-decoration: none;
+    color: #878787;
+    padding: 15px 32px;
+    text-align: center;
+  }
+  .loginbutton:visited{
+    color: #29ABE2;
+  }
   .login-screen {
   background-color: #FFF;
   padding: 20px;
@@ -169,7 +180,9 @@ footer {
   
   .app-title {
   text-align: center;
+  padding: 2em;
   color: #777;
+  font-weight: bold;
   }
   
   .login-form {
@@ -192,13 +205,13 @@ footer {
   }
   
   input:focus {
-  border: 2px solid #3498DB;
+  border: 2px solid #FFB240;
   box-shadow: none;
   }
   
   .btn {
     border: 2px solid transparent;
-    background: #3498DB;
+    background: #29ABE2;
     color: #ffffff;
     font-size: 16px;
     line-height: 25px;
@@ -214,7 +227,7 @@ footer {
   }
   
   .btn:hover {
-    background-color: #2980B9;
+    background-color: rgb(37, 128, 167);
   }
   
   .login-link {
