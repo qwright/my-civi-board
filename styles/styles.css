@@ -71,7 +71,11 @@ header {
 
 .index-banner {
   height: 90%;
-  width: 100%;
+  width: 60%;
+  margin-left: auto;
+  margin-right:auto;
+  margin-top: 5em;
+  display: block;
 }
 
 .profile-spacer {
