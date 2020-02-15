@@ -234,3 +234,62 @@ input:focus {
   margin-top: 12px;
 }
 
+/*Thread*/
+
+.board-container {
+  margin-top: 5em;
+  min-height: 50em;
+  width: 100%;
+}
+
+.post {
+  height: 11em;
+  margin: 0em 1em;
+  margin-bottom: 0;
+  width: 90%;
+}
+
+#post-user {
+  margin-top: 6em;
+  margin-left: 1.25em;
+}
+
+#post-user a {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.post img {
+  float: left;
+  margin: 0.25em;
+  width: 320px;
+}
+
+.post div {
+  float: left;
+  margin: 1% 1%;
+}
+
+.post div > h1 {
+  margin-bottom: 0.5em;
+  font-weight: bold;
+}
+
+.reply {
+  background-color: lightyellow;
+  display: table;
+  min-height: 5em;
+  margin: 0.5em;
+  margin-left: 4em;
+}
+
+.reply a {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.reply-content {
+  padding: 2em;
+}
