@@ -12,7 +12,7 @@ header {
   width: 100%;
   text-align: right;
   background-color: rgb(243, 243, 243);
- /*box-shadow: 3px 3px 10px rgb(61, 61, 61); */
+  /*box-shadow: 3px 3px 10px rgb(61, 61, 61); */
 }
 
 .profile-img {
@@ -48,7 +48,6 @@ header {
   float: left;
   padding-left: 5em;
   padding-top: 0.5em;
-  
 }
 
 .side-nav {
@@ -60,7 +59,7 @@ header {
   color: white;
   padding: 1.5em;
   border-bottom: 1px solid white;
-  background-color:rgb(216, 216, 216);
+  background-color: rgb(216, 216, 216);
 }
 
 .side-dropdown {
@@ -79,22 +78,20 @@ header {
   height: 90%;
   width: 70%;
   margin-left: auto;
-  margin-right:auto;
+  margin-right: auto;
   margin-top: 2em;
   display: block;
-  
 }
 
 .profile-spacer {
   width: 10%;
-  
 }
 
 .search-bar {
   align-self: center;
   flex-grow: 1;
 }
-.search-container{
+.search-container {
   background-color: rgb(129, 127, 127);
   padding: 3em;
   margin-top: 3em;
@@ -103,10 +100,9 @@ header {
   text-align: center;
   margin: 10em 0em 10em 25%;
   width: 50%;
-  
 }
-.search-city{
-width: 70%;
+.search-city {
+  width: 70%;
 }
 .board-content {
   height: 50em;
@@ -137,16 +133,16 @@ width: 70%;
 }
 
 .thread-container > div > a > img {
--webkit-box-shadow: 0px 3px 6px 0px rgba(105, 105, 105, 0.35);
--moz-box-shadow:    0px 3px 6px 0px rgba(105, 105, 105, 0.35);
-box-shadow:         0px 3px 6px 0px rgba105, (105, 105, 0.35);
+  -webkit-box-shadow: 0px 3px 6px 0px rgba(105, 105, 105, 0.35);
+  -moz-box-shadow: 0px 3px 6px 0px rgba(105, 105, 105, 0.35);
+  box-shadow: 0px 3px 6px 0px rgba(105, 105, 105, 0.35);
   height: 200px;
   width: 180px;
   margin-bottom: 1px;
 }
 
-.preview{
-  margin-top:1em;
+.preview {
+  margin-top: 1em;
 }
 #board #ps-1 {
   border-right: 0.1em white;
@@ -167,93 +163,150 @@ box-shadow:         0px 3px 6px 0px rgba105, (105, 105, 0.35);
 }
 
 footer {
-  background-color:rgb(243, 243, 243);
+  background-color: rgb(243, 243, 243);
   color: grey;
   padding: 1em;
 }
 
-/*!!!!!!!!!!!!*/
-/* Login Form */
+/*Login*/
 
-  .login {
+.login {
   text-align: center;
   margin: 20px auto;
   width: 20%;
   padding: 50px;
-  
-
-  }
-  .loginbutton{
-    border: none;
-    text-decoration: none;
-    color: #878787;
-    padding: 15px 32px;
-    text-align: center;
-  }
-  .loginbutton:visited{
-    color: #29ABE2;
-  }
-  .login-screen {
-  background-color: #FFF;
+}
+.loginbutton {
+  border: none;
+  text-decoration: none;
+  color: #878787;
+  padding: 15px 32px;
+  text-align: center;
+}
+.loginbutton:visited {
+  color: #29abe2;
+}
+.login-screen {
+  background-color: #fff;
   padding: 20px;
-  border-radius: 5px
-  }
-  
-  .app-title {
+  border-radius: 5px;
+}
+
+.app-title {
   text-align: center;
   padding: 2em;
   color: #777;
   font-weight: bold;
-  }
-  
-  .login-form {
+}
+
+.login-form {
   text-align: center;
-  }
-  .control-group {
+}
+.control-group {
   margin-bottom: 10px;
-  }
-  
-  input {
+}
+
+input {
   text-align: center;
-  background-color: #ECF0F1;
+  background-color: #ecf0f1;
   border: 2px solid transparent;
   border-radius: 3px;
   font-size: 16px;
   font-weight: 200;
   padding: 10px 0;
   width: 250px;
-  transition: border .5s;
-  }
-  
-  input:focus {
-  border: 2px solid #FFB240;
+  transition: border 0.5s;
+}
+
+input:focus {
+  border: 2px solid #ffb240;
   box-shadow: none;
-  }
-  
-  .btn {
-    border: 2px solid transparent;
-    background: #29ABE2;
-    color: #ffffff;
-    font-size: 16px;
-    line-height: 25px;
-    padding: 10px 0;
-    text-decoration: none;
-    text-shadow: none;
-    border-radius: 3px;
-    box-shadow: none;
-    transition: 0.25s;
-    display: block;
-    width: 250px;
-    margin: 0 auto;
-  }
-  
-  .btn:hover {
-    background-color: rgb(37, 128, 167);
-  }
-  
-  .login-link {
-    font-size: 12px;
-    color: #444;
-    display: block;
-    margin-top: 12px;
-  }
+}
+
+.btn {
+  border: 2px solid transparent;
+  background: #29abe2;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 25px;
+  padding: 10px 0;
+  text-decoration: none;
+  text-shadow: none;
+  border-radius: 3px;
+  box-shadow: none;
+  transition: 0.25s;
+  display: block;
+  width: 250px;
+  margin: 0 auto;
+}
+
+.btn:hover {
+  background-color: rgb(37, 128, 167);
+}
+
+.login-link {
+  font-size: 12px;
+  color: #444;
+  display: block;
+  margin-top: 12px;
+}
+
+/*Thread*/
+
+.board-container {
+  margin-top: 5em;
+  min-height: 50em;
+  width: 100%;
+}
+
+.post {
+  height: 11em;
+  margin: 0em 1em;
+  margin-bottom: 0;
+  width: 90%;
+}
+
+#post-user {
+  margin-top: 6em;
+  margin-left: 1.25em;
+}
+
+#post-user a {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.post img {
+  float: left;
+  margin: 0.25em;
+  width: 320px;
+}
+
+.post div {
+  float: left;
+  margin: 1% 1%;
+}
+
+.post div > h1 {
+  margin-bottom: 0.5em;
+  font-weight: bold;
+}
+
+.reply {
+  background-color: lightyellow;
+  display: table;
+  min-height: 5em;
+  margin: 0.5em;
+  margin-left: 4em;
+}
+
+.reply a {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.reply-content {
+  padding: 2em;
+}
