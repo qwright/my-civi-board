@@ -310,3 +310,88 @@ input:focus {
 .reply-content {
   padding: 2em;
 }
+  }
+  
+  .btn {
+    border: 2px solid transparent;
+    background: #29ABE2;
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 25px;
+    padding: 10px 0;
+    text-decoration: none;
+    text-shadow: none;
+    border-radius: 3px;
+    box-shadow: none;
+    transition: 0.25s;
+    display: block;
+    width: 250px;
+    margin: 0 auto;
+  }
+  
+  .btn:hover {
+    background-color: rgb(37, 128, 167);
+  }
+  
+  .login-link {
+    font-size: 12px;
+    color: #444;
+    display: block;
+    margin-top: 12px;
+  }
+  /* !!!!!!!!*?
+  /* Profile */
+  .profile {
+    text-align: center;
+    margin: 10px auto;
+    width: 50%;
+    padding: 50px;
+    display: flex;
+    color: grey;
+  
+    }
+  .left-profile{
+    flex-basis: 30%;
+    width: 20%;
+margin-top: 15em;
+color: grey;
+align-items: center;
+  }
+.right-profile{
+ margin-left: 10em;
+  margin-top: 10em;
+  flex-basis: 30%;
+
+}
+  
+  .profile-info{
+    padding: 1em;
+    text-align: left;
+  }
+ 
+  .profile-photo{
+   
+  }
+  figcaption{
+    padding: 1em;
+  }
+  .name h1{
+    font-size: 2em;
+    font-weight: bold;
+    padding-bottom: 1em;
+    color: grey;
+  }
+  .info-title{
+    font-weight: bold;
+    font-size: 14px;
+    text-align: left;
+    padding: 1em;
+  }
+  .info-content{
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    padding: 1em;
+    width: 100%;
+    margin-left: 1em;
+    text-align: left;
+  }
