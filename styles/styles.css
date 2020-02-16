@@ -1,6 +1,7 @@
 body {
   height: 50em;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: rgb(226, 226, 226);
 }
 
 header {
@@ -11,7 +12,7 @@ header {
   top: 0;
   width: 100%;
   text-align: right;
-  background-color: rgb(243, 243, 243);
+  background-color: white;
   /*box-shadow: 3px 3px 10px rgb(61, 61, 61); */
 }
 
@@ -76,7 +77,7 @@ header {
 
 .index-banner {
   height: 90%;
-  width: 70%;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
   margin-top: 2em;
@@ -86,19 +87,26 @@ header {
 .profile-spacer {
   width: 10%;
 }
-
+.blurb{
+  color:  rgb(184, 184, 184);
+  text-align: center;
+}
+.blurb h1{
+  font-size: 2em;
+  padding-bottom: 1em;
+}
 .search-bar {
   align-self: center;
   flex-grow: 1;
 }
 .search-container {
-  background-color: rgb(129, 127, 127);
+  background-color: rgb(0, 8, 53);
   padding: 3em;
-  margin-top: 3em;
+  
 }
 .search-form {
   text-align: center;
-  margin: 10em 0em 10em 25%;
+  margin: 5em 0em 10em 25%;
   width: 50%;
 }
 .search-city {
@@ -310,7 +318,7 @@ input:focus {
 .reply-content {
   padding: 2em;
 }
-  }
+  
   
   .btn {
     border: 2px solid transparent;
