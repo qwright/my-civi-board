@@ -100,7 +100,7 @@ header {
   flex-grow: 1;
 }
 .search-container {
-  background-color: rgb(0, 8, 53);
+  background-color: rgb(10, 16, 51);
   padding: 3em;
   
 }
@@ -112,6 +112,11 @@ header {
 .search-city {
   width: 70%;
 }
+input[type=submit]{
+  background-color: #FFB240;
+  color: rgb(44, 44, 44);
+}
+/* board content*/
 .board-content {
   height: 50em;
   width: 50%;
@@ -377,9 +382,7 @@ align-items: center;
     text-align: left;
   }
  
-  .profile-photo{
-   
-  }
+  
   figcaption{
     padding: 1em;
   }
