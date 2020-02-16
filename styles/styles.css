@@ -50,22 +50,6 @@ header {
   padding-top: 0.5em;
 }
 
-.side-nav {
-  font-size: 1em;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  color: white;
-  padding: 1.5em;
-  border-bottom: 1px solid white;
-  background-color: rgb(216, 216, 216);
-}
-
-.side-dropdown {
-  display: none;
-}
-
 .container {
   margin-top: 5em;
   margin-bottom: 1em;
@@ -101,9 +85,11 @@ header {
   margin: 10em 0em 10em 25%;
   width: 50%;
 }
+
 .search-city {
   width: 70%;
 }
+
 .board-content {
   height: 50em;
   width: 50%;
@@ -127,7 +113,7 @@ header {
   display: inline-block;
   margin: 1em 2em;
   height: 330px;
-  width: 182px;
+  width: 190px;
   word-wrap: break-word;
   overflow: hidden;
 }
@@ -135,15 +121,16 @@ header {
 .thread-container > div > a > img {
   -webkit-box-shadow: 0px 3px 6px 0px rgba(105, 105, 105, 0.35);
   -moz-box-shadow: 0px 3px 6px 0px rgba(105, 105, 105, 0.35);
+  margin-bottom: 1px;
   box-shadow: 0px 3px 6px 0px rgba(105, 105, 105, 0.35);
   height: 200px;
   width: 180px;
-  margin-bottom: 1px;
 }
 
 .preview {
   margin-top: 1em;
 }
+
 #board #ps-1 {
   border-right: 0.1em white;
   background-color: white;
@@ -156,10 +143,6 @@ header {
 #ps-2 {
   text-align: center;
   width: 10%;
-}
-
-#board #ps-2 {
-  width: 0%;
 }
 
 footer {
