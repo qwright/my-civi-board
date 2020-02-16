@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href ="styles/reset.css"/>
+    <link rel="stylesheet" href="styles/reset.css" />
     <link rel="stylesheet" href="styles/styles.css" />
-    
+
     <title>MyCiviBoard</title>
-    <link rel="icon" type ="image/ico" href = "images/logo.png"/>
-  </head>
-  <body>
+    <link rel="icon" type="image/ico" href="images/logo.png" />
+</head>
+
+<body>
     <header>
-    <div class='logo'>
-    <a href = "index.html"><img src ="images/civiboard_logoV1.png" alt ="logo" width="250px"></a>
-    </div>
+        <div class='logo'>
+            <a href="index.html"><img src="images/civiboard_logoV1.png" alt="logo" width="250px"></a>
+        </div>
     </header>
     <main>
         <div class="login">
@@ -20,59 +22,60 @@
                 <div class="login-title">
                     <h1>Hello, Welcome Back!</h1>
                 </div>
-    
+
                 <div class="login-form">
                     <div class="control-group">
-                    <form action ="" method ="">
-                    <input type="text" class="login-field" value="" placeholder="username" id="login-name">
-                    
+                        <form action="" method="" name="signup-form">
+                            <input type="text" class="login-field" value="" placeholder="username" id="login-name" required>
+
                     </div>
-    
+
                     <div class="control-group">
-                    <input type="password" class="login-field" value="" placeholder="password" id="login-pass">
-                    
+                        <input type="password" class="login-field" value="" placeholder="password" id="login-pass" required>
+
                     </div>
-                    <input type ="submit" value ="Login">
-                </form>
+                    <input type="submit" value="Login">
+                    </form>
                 </div>
             </div>
             <br>
-        
+
             <div class="login-screen">
                 <div class="app-title">
-                    <h4>Create your account now</h4>  
+                    <h4>Create your account now</h4>
                 </div>
                 <div class="login-form">
                     <div class="control-group">
-                        <form action ="" method = "">
-                        <input type="text" class="login-field" value="" placeholder="first name" id="fName">
-                        </div>
-                    <div class="control-group">
-                            <input type="text" class="login-field" value="" placeholder="last name" id="lName">
-                        </div>
-                    <div class="control-group">
-                    <input type="text" class="login-field" value="" placeholder="username" id="login-name">
+                        <form action="" method="" name="login-form">
+                            <input type="text" class="login-field" value="" placeholder="first name" id="fName" required>
                     </div>
                     <div class="control-group">
-                    <input type="email" class="login-field" value="" placeholder="email" id="email">
+                        <input type="text" class="login-field" value="" placeholder="last name" id="lName" required>
                     </div>
                     <div class="control-group">
-                    <input type="password" class="login-field" value="" placeholder="password" id="login-pass">
+                        <input type="text" class="login-field" value="" placeholder="username" id="login-name" required>
                     </div>
-                
-                    <input type ="submit" value ="Sign Up">
-                </form>
-            </div>
+                    <div class="control-group">
+                        <input type="email" class="login-field" value="" placeholder="email" id="email" required>
+                    </div>
+                    <div class="control-group">
+                        <input type="password" class="login-field" value="" placeholder="password" id="login-pass" required>
+                    </div>
 
-        </div>
+                    <input type="submit" value="Sign Up">
+                    </form>
+                </div>
+
+            </div>
 
     </main>
     <footer>
-		<div class = "footer-content">
+        <div class="footer-content">
             <p>Contact Us</p>
-            <hr class ="footer">
+            <hr class="footer">
             <p>&copy; Paige Latimer and Quinn Wright</p>
-            </div>
-	</footer>
-    </body>
-    </html>
+        </div>
+    </footer>
+</body>
+
+</html>
