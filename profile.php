@@ -12,6 +12,7 @@
 </head>
 
 <body>
+	<?php include("scripts/dbconnect.php");?>
     <header>
         <div class='logo'>
             <a href="index.html"><img src="images/civiboard_logoV1.png" alt="logo" width="250px"></a>

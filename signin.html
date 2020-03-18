@@ -25,16 +25,16 @@
 
                 <div class="login-form">
                     <div class="control-group">
-                        <form action="" method="" name="signup-form">
-                            <input type="text" class="login-field" value="" placeholder="username" id="login-name" required>
+                        <form action="scripts/loginhandler.php" method="POST" name="signup-form">
+                            <input type="text" class="login-field" name="user" placeholder="username" id="login-name" required>
 
                     </div>
 
                     <div class="control-group">
-                        <input type="password" class="login-field" value="" placeholder="password" id="login-pass" required>
+                        <input type="password" class="login-field" name="pass" placeholder="password" id="login-pass" required>
 
                     </div>
-                    <input type="submit" value="Login">
+                    <input type="submit" value="Login" name="login">
                     </form>
                 </div>
             </div>
@@ -46,7 +46,7 @@
                 </div>
                 <div class="login-form">
                     <div class="control-group">
-                        <form action="" method="" name="login-form">
+                        <form action="scripts/loginhandler.php" method="POST" name="login-form">
                             <input type="text" class="login-field" value="" placeholder="first name" id="fName" required>
                     </div>
                     <div class="control-group">
@@ -62,7 +62,7 @@
                         <input type="password" class="login-field" value="" placeholder="password" id="login-pass" required>
                     </div>
 
-                    <input type="submit" value="Sign Up">
+                    <input type="submit" value="Sign Up" name="signup">
                     </form>
                 </div>
 
