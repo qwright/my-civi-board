@@ -231,6 +231,7 @@ hr.footer {
 .login-screen {
     padding: 20px;
     border-radius: 5px;
+    background-color: lightgrey;
 }
 
 .login-title {
@@ -298,6 +299,21 @@ input:focus {
     color: #444;
     display: block;
     margin-top: 12px;
+}
+
+.signup-link {
+    color: grey;
+    padding-top: 2em;
+}
+
+.signup-link a:link {
+    text-decoration: none;
+    font-weight: bold;
+    color: darkgrey;
+}
+
+.signup-link a:hover {
+    color: #FFB240;
 }
 
 

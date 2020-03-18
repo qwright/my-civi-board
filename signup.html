@@ -20,33 +20,33 @@
         <div class="login">
             <div class="login-screen">
                 <div class="login-title">
-                    <h1>Hello, Welcome Back!</h1>
+                    <h4>Create Your Account!</h4>
                 </div>
-
                 <div class="login-form">
                     <div class="control-group">
-                        <form action="scripts/loginhandler.php" method="POST" name="signup-form">
-                            <input type="text" class="login-field" name="user" placeholder="username" id="login-name" required>
-
+                        <form action="scripts/loginhandler.php" method="POST" name="login-form">
+                            <input type="text" class="login-field" value="" placeholder="first name" id="fName" required>
                     </div>
-
                     <div class="control-group">
-                        <input type="password" class="login-field" name="pass" placeholder="password" id="login-pass" required>
-
+                        <input type="text" class="login-field" value="" placeholder="last name" id="lName" required>
                     </div>
-                    <input type="submit" value="Login" name="login">
+                    <div class="control-group">
+                        <input type="text" class="login-field" value="" placeholder="username" id="login-name" required>
+                    </div>
+                    <div class="control-group">
+                        <input type="email" class="login-field" value="" placeholder="email" id="email" required>
+                    </div>
+                    <div class="control-group">
+                        <input type="password" class="login-field" value="" placeholder="password" id="login-pass" required>
+                    </div>
+
+                    <input type="submit" value="Sign Up" name="signup">
                     </form>
                     <div class="signup-link">
-                        <h5>Don't have an account? <a href="signup.html">Sign up now!</a></h5>
+                        <h5>Already have an account?<a href="signin.html"> Sign in here!</a></h5>
                     </div>
                 </div>
             </div>
-            <br>
-
-
-
-        </div>
-
     </main>
     <footer>
         <div class="footer-content">
