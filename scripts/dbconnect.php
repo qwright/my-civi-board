@@ -2,7 +2,7 @@
 function dbConnect(){
 	//$servername = "localhost";
 	$username = "root";
-	$password = "root"; //different
+	$password = "ilovemocha"; //different
 	//$dbName = "Civi";
 	$dbInfo = "mysql:host=localhost;dbname=Civi";
 
