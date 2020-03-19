@@ -5,7 +5,7 @@
 	<link rel="stylesheet" href ="styles/reset.css"/>
 	<link rel="stylesheet" href="styles/styles.css" />
 	
-		<script src="js/script.js"></script>
+		<script src="scripts/script.js"></script>
 	<title>MyCiviBoard</title>
 	<link rel="icon" type ="image/ico" href = "images/logo.png"/>
   </head>
@@ -28,8 +28,14 @@
 		</div>
       <div class="board-content">
 		  <div id="post">
-				<button type="button" class="btn">[Post a Thread]</button>
-
+				<button type="button" class="btn" id="post-btn">[Post a Thread]</button>
+				<div id="post-form" class="post-hid">
+				<form action="scripts/postthread.php" method="POST" name="submit-thread" id="post-thread">
+					<input type="text" name="title" placeholder="title"></br>
+					<input type="submit" value="Submit" name="submit_thread">
+				</form>
+				<textarea rows="4" cols="50" name="postmsg" form="post-thread">Enter text here...</textarea>
+				</div>
 		  </div>
 		  <div class="thread-container">
 			  <div id="thread-1">

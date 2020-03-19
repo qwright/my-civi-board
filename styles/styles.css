@@ -116,16 +116,27 @@ header {
     min-width: 7em;
 }
 
-input[type=submit] {
-    background-color: #FFB240;
+input[type="submit"] {
+    background-color: #ffb240;
     color: rgb(44, 44, 44);
     font-weight: bold;
     width: 25%;
     min-width: 5em;
 }
 
-input[type=submit]:hover {
+input[type="submit"]:hover {
     background-color: rgb(255, 202, 123);
+}
+
+
+/* civiboard */
+
+.post-hid {
+    display: none;
+}
+
+.post-vis {
+    display: block;
 }
 
 
@@ -275,7 +286,7 @@ input:focus {
 
 .btn {
     border: 2px solid transparent;
-    background: #FFB240;
+    background: #ffb240;
     color: #ffffff;
     font-size: 16px;
     line-height: 25px;
@@ -379,7 +390,7 @@ input:focus {
 
 .btn {
     border: 2px solid transparent;
-    background: #29ABE2;
+    background: #29abe2;
     color: #ffffff;
     font-size: 16px;
     line-height: 25px;
