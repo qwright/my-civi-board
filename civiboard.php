@@ -37,7 +37,19 @@
 				<textarea rows="4" cols="50" name="postmsg" form="post-thread">Enter text here...</textarea>
 				</div>
 		  </div>
-		  <div class="thread-container">
+			<div class="thread-container">
+<?php
+include("scripts/dbconnect.php");
+$pdo = dbConnect();
+$seekthread = "SELECT postNo, msg, img, title, time FROM users";
+$pdo->query($seekthread);
+echo "<div id="thread-1">";
+echo "<a href="thread.html"><img src="images/city-park.jpg" alt=""></a>";
+echo "<div class="preview">";
+echo "<b>Title Here</b><br/>";
+echo "This is a thread preview";
+echo "</div>";
+?>
 			  <div id="thread-1">
 			  	<a href="thread.html"><img src="images/city-park.jpg" alt=""></a>
 				<div class="preview">
