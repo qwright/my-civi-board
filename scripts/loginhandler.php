@@ -1,6 +1,6 @@
 <?php
 include("dbconnect.php");
-if($_POST["login"]){
+if(!empty($_POST["login"])){
 	try{
 		$pdo=dbConnect();
 		$sql = "SELECT userNo, username, pass FROM users WHERE username=? and pass=?";
@@ -27,22 +27,22 @@ if($_POST["login"]){
 	}	
 }
 
-if($_POST["signup"]){
+if(!empty($_POST["signup"])){
 	try{
 		$pdo=dbConnect();
-		$sql = "INSERT INTO users (firstName, lastName, pass, email, username) VALUES (?, ?, ?, ?, ?)";
+		$sql = "INSERT INTO 'users' ('firstName', 'lastName', 'pass', 'email', 'username') VALUES (?, ?, ?, ?, ?)";
 		$statement = $pdo->prepare($sql);
-		$statement->bindValue(1,$_POST["firstName"]);
-		$statement->bindValue(2,$_POST["lastName"]);
-		$statement->bindValue(3,$_POST["password"]);
-		$statement->bindValue(4,$_POST["email"]);
-		$statement->bindValue(5,$_POST["username"]);
+		$statement->bindValue(1,$_POST['firstName']);
+		$statement->bindValue(2,$_POST['lastName']);
+		$statement->bindValue(3,$_POST['password']);
+		$statement->bindValue(4,$_POST['email']);
+		$statement->bindValue(5,$_POST['username']);
 		$statement->execute();
 		header("Location: ../signin.html");
-		echo "<h5>Thanks for signing up! <a href=\"../signin.html\">Sign in</a>";
 	}
 	catch(PDOException $e){
 		die($e->getMessage());
+		header("Location: ../signup.html");
 	}	
 	closeConnection($pdo);
 }
