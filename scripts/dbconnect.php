@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "ilovemocha";
+$password = "root"; //different for each localhost
 $dbName = "Civi";
 
 //create conn

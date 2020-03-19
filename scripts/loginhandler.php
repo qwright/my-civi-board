@@ -16,7 +16,6 @@ if($_POST["login"]){
 	}
 
 if($_POST["signup"]){
-
 }
 ?>
 
