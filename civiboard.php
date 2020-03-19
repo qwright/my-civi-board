@@ -30,7 +30,7 @@
 		  <div id="post">
 				<button type="button" class="btn" id="post-btn">[Post a Thread]</button>
 				<div id="post-form" class="post-hid">
-				<form action="" method="POST" name="submit-thread" id="post-thread">
+				<form action="scripts/postthread.php" method="POST" name="submit-thread" id="post-thread">
 					<input type="text" name="title" placeholder="title"></br>
 					<input type="submit" value="Submit" name="submit_thread">
 				</form>
