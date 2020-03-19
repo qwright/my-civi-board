@@ -1,17 +1,20 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "ilovemocha";
-$dbName = "Civi";
+function dbConnect(){
+	//$servername = "localhost";
+	$username = "root";
+	$password = "ilovemocha";
+	//$dbName = "Civi";
+	$dbInfo = "mysql:host=localhost;dbname=Civi";
 
-//create conn
-$conn = new mysqli($servername, $username, $password, $dbName);
+	//create conn
+	$pdo = new PDO($dbInfo, $username, $password);
+	echo "Connected to DB";	
+	return $pdo;
+}
 
-//check
-if ($conn->connect_error){
-	die("Connection failed: " .$conn->connect_error);
-}else{
-echo "Connection successful";
+function closeConnection($pdo){
+	$pdo=null;
+	echo "Disconnected from DB";
 }
 ?>
 
