@@ -38,9 +38,8 @@ if(!empty($_POST["signup"])){
 		$statement->bindValue(3,$_POST['password']);
 		$statement->bindValue(4,$_POST['email']);
 		$statement->bindValue(5,$_POST['username']);
-		$statement->execute();
-		
-		//header("Location: ../signin.html");
+		$statement->execute();	
+		header("Location: ../signin.html");
 	}
 	catch(PDOException $e){
 		die($e->getMessage());
