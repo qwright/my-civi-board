@@ -29,11 +29,12 @@
 					<div id="reply">		
 						<button type="button" class="btn" id="reply-btn">[Post a reply]</button>
 						<div id="reply-form" class="post-hid">
-						<form action="scripts/postreply.php" method="POST" name="submit-reply" id="reply-thread">
-							<input type="text" name="title" placeholder="title"></br>
+<?php 
+						echo "<form action=\"scripts/postreply.php?p=".$_GET["p"]."\" method='POST' name='submit-reply' id='reply-thread'>"
+						?>
 							<input type="submit" value="Submit" name="submit_thread">
 				</form>
-				<textarea rows="4" cols="50" name="postmsg" form="post-thread">Enter text here...</textarea>
+				<textarea rows="4" cols="50" name="replymsg" form="reply-thread">Enter text here...</textarea>
 				</div>
 					</div>
             <div id="post-user"><a href="#">Username</a> <time>24:00/01/01/2000</time></div>
