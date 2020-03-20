@@ -16,7 +16,7 @@ if(!empty($_POST["login"])){
 			var_export($user);
 			$_SESSION["userNo"] = $user["userNo"];
 			closeConnection($pdo);	
-			header("Location: ../index.html");
+			header("Location: ../index.php");
 		}
 		else{
 			header("Location: ../signin.html");
