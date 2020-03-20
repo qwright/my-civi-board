@@ -18,16 +18,30 @@
             <a href="index.html"><img src="images/civiboard_logoV1.png" alt="logo" width="250px"></a>
         </div>
         <?php
+        //Check if the user is logged in with session. If a user is logged in, show a link to profile page
         session_start();
         $pdo=dbConnect();
-        <div class='profile-img'>
-            <a href="#"><img src="images/no-user.png" alt="no-user"></a>
-            <div class="profile-dropdown">
-                <p>
-                    <a href='signin.html' class="loginbutton">Login/Sign Up</a>
-                </p>
-            </div>
-        </div>
+        if (isset($_SESSION["loggedin"])==true){
+            echo "<div class='profile-img'>";
+            echo "<a href=\"#\"><img src=\"images/no-user.png\" alt=\"no-user\"></a>";
+            echo "<div class='profile-dropdown'>";
+            echo "<p>";
+            echo "<a href='profile.php' class='loginbutton'>Profile Info</a>";
+            echo "</p>";
+            echo "</div>";
+            echo "</div>";
+        }
+        else{
+            echo "<div class='profile-img'>";
+            echo "<a href=\"#\"><img src=\"images/no-user.png\" alt=\"no-user\"></a>";
+            echo "<div class='profile-dropdown'>";
+            echo "<p>";
+            echo "<a href='signin.html' class='loginbutton'>Login/Sign Up</a>";
+            echo "</p>";
+            echo "</div>";
+            echo "</div>";
+        }
+        
         ?>
     </header>
     <main>
@@ -65,6 +79,9 @@
                             echo "<div class='info-content'><p>".$userInfo["lastName"]."</p></div>";
                             echo "<div class='info-title'><p>Email:</p></div>";
                             echo "<div class='info-content'><p>".$userInfo["email"]."</p></div>";
+                            echo "<div class='btn-space'>";
+                            echo "<form><button formaction='scripts/logout.php' class='btn'>Logout</button><form>";
+                            echo "</div>";
                             echo "</div>";
                         }
                         catch(PDOException $e){
