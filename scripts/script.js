@@ -16,3 +16,14 @@ window.onload = function() {
   });
 };
 
+window.onload = function() {
+  document.getElementById("reply-btn").addEventListener("click", function() {
+    console.log("reached");
+    var form = document.getElementById("reply-form");
+    if (form.className === "post-hid") {
+      form.className = "post-vis";
+    } else {
+      form.className = "post-hid";
+    }
+  });
+};

@@ -47,7 +47,7 @@
 				$stmt->execute();
 				while($row = $stmt->fetch()){
 					echo "<div id=\"thread-".$row["postNo"]."\">";
-					echo "<a href=\"thread.html\"><img src=\"images/city-park.jpg\"></a>";
+					echo "<a href=\"thread.php?p=".$row["postNo"]."\"><img src=\"images/city-park.jpg\"></a>";
 					echo "<div class=\"preview\">";
 					echo "<span>".$row["time"]."</span><br/>";
 					echo "<b>".$row["title"]."</b><br/>";
@@ -59,11 +59,6 @@
 				die($e->getMessage());
 			}
 			?>
-			  <div id="thread-8">
-			  	<a href=""><img src="images/city-park.jpg" alt=""></a>
-				<div class="preview"><b>Title Here</b><br/>
-					This is a thread preview</div>
-			  </div>
 		  </div>
       </div>
 	  <div class="profile-spacer" id="ps-2">

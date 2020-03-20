@@ -5,7 +5,8 @@
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="styles/reset.css" />
     <link rel="stylesheet" href="styles/styles.css" />
-    <link rel="icon" type="image/ico" href="images/logo.png" />
+		<link rel="icon" type="image/ico" href="images/logo.png" />
+		<script src="scripts/script.js"></script>
     <title>MyCiviBoard</title>
 </head>
 
@@ -23,8 +24,18 @@
             </div>
         </div>
     </header>
-    <main>
-        <div class="board-container">
+		<main>	
+				<div class="board-container">
+					<div id="reply">		
+						<button type="button" class="btn" id="reply-btn">[Post a reply]</button>
+						<div id="reply-form" class="post-hid">
+						<form action="scripts/postreply.php" method="POST" name="submit-reply" id="reply-thread">
+							<input type="text" name="title" placeholder="title"></br>
+							<input type="submit" value="Submit" name="submit_thread">
+				</form>
+				<textarea rows="4" cols="50" name="postmsg" form="post-thread">Enter text here...</textarea>
+				</div>
+					</div>
             <div id="post-user"><a href="#">Username</a> <time>24:00/01/01/2000</time></div>
             <div class="post">
                 <img src="images/city-park.jpg">
