@@ -14,7 +14,6 @@ function dbConnect(){
 
 function closeConnection($pdo){
 	$pdo=null;
-	//echo "Disconnected from DB";
 }
 ?>
 

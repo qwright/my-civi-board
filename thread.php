@@ -5,7 +5,8 @@
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="styles/reset.css" />
     <link rel="stylesheet" href="styles/styles.css" />
-    <link rel="icon" type="image/ico" href="images/logo.png" />
+		<link rel="icon" type="image/ico" href="images/logo.png" />
+		<script src="scripts/script.js"></script>
     <title>MyCiviBoard</title>
 </head>
 
@@ -23,16 +24,41 @@
             </div>
         </div>
     </header>
-    <main>
-        <div class="board-container">
-            <div id="post-user"><a href="#">Username</a> <time>24:00/01/01/2000</time></div>
-            <div class="post">
-                <img src="images/city-park.jpg">
-                <div>
-                    <h1>Title</h1>
-                    <p>This is a thread post</p>
-                </div>
-            </div>
+		<main>	
+				<div class="board-container">
+					<div id="reply">		
+						<button type="button" class="btn" id="reply-btn">[Post a reply]</button>
+						<div id="reply-form" class="post-hid">
+						<?php 
+						echo "<form action=\"scripts/postreply.php?p=".$_GET["p"]."\" method='POST' name='submit-reply' id='reply-thread'>"
+						?>
+							<input type="submit" value="Submit" name="submit_thread">
+				</form>
+				<textarea rows="4" cols="50" name="replymsg" form="reply-thread">Enter text here...</textarea>
+				</div>
+					</div>
+					<?php
+						include("scripts/dbconnect.php");
+						try{
+							$pdo = dbConnect();	
+							$thread = "SELECT posts.postNo, posts.msg, posts.img, posts.userNo, posts.title, posts.time, users.username FROM users JOIN posts ON users.userNo=posts.userNo WHERE postNo=".$_GET["p"]."";
+							$stmt = $pdo->prepare($thread);
+							$stmt->execute();
+							$rslt = $stmt->fetch();
+
+							//post info
+							echo "<div id=\"post-user\"><b>".$rslt["username"]."</b> <time>".$rslt["time"]."</time></div>";
+							echo "<div class=\"post\">";
+              echo "<img src=\"images/city-park.jpg\">";
+              echo "<div>";
+              echo "<h1>".$rslt["title"]."</h1>";
+              echo "<p>".$rslt["msg"]."</p>";
+							echo "</div></div>";
+							closeConnection($pdo);
+						}catch(PDOException $e){
+							die($e->getMessage());
+						}
+					?>
             <div class="reply" id="reply-1" class="reply">
                 <a href="#">Username</a> <time>24:00/01/01/2000</time>
                 <div class="reply-content">
