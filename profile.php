@@ -15,62 +15,78 @@
 	<?php include("scripts/dbconnect.php");?>
     <header>
         <div class='logo'>
-            <a href="index.html"><img src="images/civiboard_logoV1.png" alt="logo" width="250px"></a>
+            <a href="index.php"><img src="images/civiboard_logoV1.png" alt="logo" width="250px"></a>
         </div>
-        <div class='profile-img'>
-            <a href="#"><img src="images/no-user.png" alt="no-user"></a>
-            <div class="profile-dropdown">
-                <p>
-                    <a href='signin.html' class="loginbutton">Login/Sign Up</a>
-                </p>
-            </div>
-        </div>
+        <?php
+        //Check if the user is logged in with session. If a user is logged in, show a link to profile page
+        session_start();
+        $pdo=dbConnect();
+        if (isset($_SESSION["loggedin"])==true){
+            echo "<div class='profile-img'>";
+            echo "<a href=\"#\"><img src=\"images/no-user.png\" alt=\"no-user\"></a>";
+            echo "<div class='profile-dropdown'>";
+            echo "<p>";
+            echo "<a href='profile.php' class='loginbutton'>Profile Info</a>";
+            echo "</p>";
+            echo "</div>";
+            echo "</div>";
+        }
+        else{
+            echo "<div class='profile-img'>";
+            echo "<a href=\"#\"><img src=\"images/no-user.png\" alt=\"no-user\"></a>";
+            echo "<div class='profile-dropdown'>";
+            echo "<p>";
+            echo "<a href='signin.html' class='loginbutton'>Login/Sign Up</a>";
+            echo "</p>";
+            echo "</div>";
+            echo "</div>";
+        }
+        ?>
     </header>
     <main>
-        <div class="conatiner">
-            <div class="profile">
-
-                <div class="left-profile">
-                    <div class="test">
-                        <div class="name">
-                            <h1>John Doe</h1>
-                        </div>
-                        <div class="profile-photo">
-                            <figure>
-                                <img src="images/profile-image.png" width="100px" />
-                                <figcaption>Avatar Picture</figcaption>
-                            </figure>
-                        </div>
-                    </div>
-                </div>
-                <div class="right-profile">
-                    <div class="info-title">
-                        <p>Username:</p>
-                    </div>
-                    <div class="info-content">
-                        <p>johndoe23</p>
-                    </div>
-                    <div class="info-title">
-                        <p>First Name:</p>
-                    </div>
-                    <div class="info-content">
-                        <p>John</p>
-                    </div>
-                    <div class="info-title">
-                        <p>Last Name:</p>
-                    </div>
-                    <div class="info-content">
-                        <p>Doe</p>
-                    </div>
-                    <div class="info-title">
-                        <p>Email:</p>
-                    </div>
-                    <div class="info-content">
-                        <p>johndoe23@gmail.com</p>
-                    </div>
-                    <button type="button" class="btn" style="margin: 1em;">Update Info</button>
-                </div>
-
+                        <?php
+                        try{
+                            session_start();
+                            $pdo=dbConnect();
+                            //$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                            $sql = "SELECT * FROM users WHERE username=?";
+                            $stmt = $pdo->prepare($sql);
+                            $stmt->bindValue(1,$_SESSION["username"]);
+                            $stmt->execute();
+                            $userInfo = $stmt->fetch();
+                            echo "<div class='conatiner'>";
+                            echo "<div class='profile'>";
+                            echo "<div class='left-profile'>";
+                            echo "<div class='test'>";
+                            echo "<div class='name'>";
+                            echo "<h1>".$userInfo["firstName"]." ".$userInfo["lastName"]."</h1>";
+                            echo "</div>";
+                            echo "<div class='profile-photo'>";
+                            echo "<figure>";
+                            echo "<img src='images/profile-image.png' width='100px'/>";
+                            echo "<figcaption>Avatar Picture</figcaption>";
+                            echo "</figure>";
+                            echo "</div>";
+                            echo "</div>";
+                            echo "</div>";
+                            echo "<div class='right-profile'>";
+                            echo "<div class='info-title'><p>Username:</p></div>";
+                            echo "<div class='info-content'><p>".$userInfo["username"]."</p></div>";
+                            echo "<div class='info-title'><p>First Name:</p></div>";
+                            echo "<div class='info-content'><p>".$userInfo["firstName"]."</p></div>";
+                            echo "<div class='info-title'><p>Last Name:</p></div>";
+                            echo "<div class='info-content'><p>".$userInfo["lastName"]."</p></div>";
+                            echo "<div class='info-title'><p>Email:</p></div>";
+                            echo "<div class='info-content'><p>".$userInfo["email"]."</p></div>";
+                            echo "<div class='btn-space'>";
+                            echo "<form><button formaction='scripts/logout.php' class='btn'>Logout</button><form>";
+                            echo "</div>";
+                            echo "</div>";
+                        }
+                        catch(PDOException $e){
+                            die($e->getMessage());
+                        }
+                        ?>
             </div>
         </div>
     </main>
