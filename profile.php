@@ -15,7 +15,7 @@
 	<?php include("scripts/dbconnect.php");?>
     <header>
         <div class='logo'>
-            <a href="index.html"><img src="images/civiboard_logoV1.png" alt="logo" width="250px"></a>
+            <a href="index.php"><img src="images/civiboard_logoV1.png" alt="logo" width="250px"></a>
         </div>
         <?php
         //Check if the user is logged in with session. If a user is logged in, show a link to profile page
@@ -41,7 +41,6 @@
             echo "</div>";
             echo "</div>";
         }
-        
         ?>
     </header>
     <main>
