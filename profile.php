@@ -17,6 +17,9 @@
         <div class='logo'>
             <a href="index.html"><img src="images/civiboard_logoV1.png" alt="logo" width="250px"></a>
         </div>
+        <?php
+        session_start();
+        $pdo=dbConnect();
         <div class='profile-img'>
             <a href="#"><img src="images/no-user.png" alt="no-user"></a>
             <div class="profile-dropdown">
@@ -25,52 +28,49 @@
                 </p>
             </div>
         </div>
+        ?>
     </header>
     <main>
-        <div class="conatiner">
-            <div class="profile">
-
-                <div class="left-profile">
-                    <div class="test">
-                        <div class="name">
-                            <h1>John Doe</h1>
-                        </div>
-                        <div class="profile-photo">
-                            <figure>
-                                <img src="images/profile-image.png" width="100px" />
-                                <figcaption>Avatar Picture</figcaption>
-                            </figure>
-                        </div>
-                    </div>
-                </div>
-                <div class="right-profile">
-                    <div class="info-title">
-                        <p>Username:</p>
-                    </div>
-                    <div class="info-content">
-                        <p>johndoe23</p>
-                    </div>
-                    <div class="info-title">
-                        <p>First Name:</p>
-                    </div>
-                    <div class="info-content">
-                        <p>John</p>
-                    </div>
-                    <div class="info-title">
-                        <p>Last Name:</p>
-                    </div>
-                    <div class="info-content">
-                        <p>Doe</p>
-                    </div>
-                    <div class="info-title">
-                        <p>Email:</p>
-                    </div>
-                    <div class="info-content">
-                        <p>johndoe23@gmail.com</p>
-                    </div>
-                    <button type="button" class="btn" style="margin: 1em;">Update Info</button>
-                </div>
-
+                        <?php
+                        try{
+                            session_start();
+                            $pdo=dbConnect();
+                            //$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                            $sql = "SELECT * FROM users WHERE username=?";
+                            $stmt = $pdo->prepare($sql);
+                            $stmt->bindValue(1,$_SESSION["username"]);
+                            $stmt->execute();
+                            $userInfo = $stmt->fetch();
+                            echo "<div class='conatiner'>";
+                            echo "<div class='profile'>";
+                            echo "<div class='left-profile'>";
+                            echo "<div class='test'>";
+                            echo "<div class='name'>";
+                            echo "<h1>".$userInfo["firstName"]." ".$userInfo["lastName"]."</h1>";
+                            echo "</div>";
+                            echo "<div class='profile-photo'>";
+                            echo "<figure>";
+                            echo "<img src='images/profile-image.png' width='100px'/>";
+                            echo "<figcaption>Avatar Picture</figcaption>";
+                            echo "</figure>";
+                            echo "</div>";
+                            echo "</div>";
+                            echo "</div>";
+                            echo "<div class='right-profile'>";
+                            echo "<div class='info-title'><p>Username:</p></div>";
+                            echo "<div class='info-content'><p>".$userInfo["username"]."</p></div>";
+                            echo "<div class='info-title'><p>First Name:</p></div>";
+                            echo "<div class='info-content'><p>".$userInfo["firstName"]."</p></div>";
+                            echo "<div class='info-title'><p>Last Name:</p></div>";
+                            echo "<div class='info-content'><p>".$userInfo["lastName"]."</p></div>";
+                            echo "<div class='info-title'><p>Email:</p></div>";
+                            echo "<div class='info-content'><p>".$userInfo["email"]."</p></div>";
+                            echo "</div>";
+                        }
+                        catch(PDOException $e){
+                            die($e->getMessage());
+                        }
+                        ?>
             </div>
         </div>
     </main>
