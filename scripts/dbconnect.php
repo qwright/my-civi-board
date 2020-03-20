@@ -8,13 +8,13 @@ function dbConnect(){
 
 	//create conn
 	$pdo = new PDO($dbInfo, $username, $password);
-	echo "Connected to DB";	
+	//echo "Connected to DB";	
 	return $pdo;
 }
 
 function closeConnection($pdo){
 	$pdo=null;
-	echo "Disconnected from DB";
+//	echo "Disconnected from DB";
 }
 ?>
 

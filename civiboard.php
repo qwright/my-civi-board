@@ -38,55 +38,27 @@
 				</div>
 		  </div>
 			<div class="thread-container">
-<?php
-include("scripts/dbconnect.php");
-$pdo = dbConnect();
-$seekthread = "SELECT postNo, msg, img, title, time FROM users";
-$pdo->query($seekthread);
-echo "<div id="thread-1">";
-echo "<a href="thread.html"><img src="images/city-park.jpg" alt=""></a>";
-echo "<div class="preview">";
-echo "<b>Title Here</b><br/>";
-echo "This is a thread preview";
-echo "</div>";
-?>
-			  <div id="thread-1">
-			  	<a href="thread.html"><img src="images/city-park.jpg" alt=""></a>
-				<div class="preview">
-					<b>Title Here</b><br/>
-					This is a thread preview
-				</div>
-			  </div>
-			  <div id="thread-2">
-			  	<a href=""><img src="images/city-park.jpg" alt=""></a>
-				<div class="preview"><b>Title Here</b><br/>
-					This is a thread preview</div>
-			  </div>
-			  <div id="thread-3">
-			  	<a href=""><img src="images/city-park.jpg" alt=""></a>
-				<div class="preview"><b>Title Here</b><br/>
-					This is a thread preview</div>
-			  </div>
-			  <div id="thread-4">
-			  	<a href=""><img src="images/city-park.jpg" alt=""></a>
-				<div class="preview"><b>Title Here</b><br/>
-					This is a thread preview</div>
-			  </div>
-			  <div id="thread-5">
-			  	<a href=""><img src="images/city-park.jpg" alt=""></a>
-				<div class="preview"><b>Title Here</b><br/>
-					This is a thread preview</div>
-			  </div>
-			  <div id="thread-6">
-			  	<a href=""><img src="images/city-park.jpg" alt=""></a>
-				<div class="preview"><b>Title Here</b><br/>
-					This is a thread preview</div>
-			  </div>
-			  <div id="thread-7">
-			  	<a href=""><img src="images/city-park.jpg" alt=""></a>
-				<div class="preview"><b>Title Here</b><br/>
-					This is a thread preview</div>
-			  </div>
+			<?php
+			include("scripts/dbconnect.php");
+			try{
+				$pdo = dbConnect();
+				$seek = "SELECT postNo, msg, img, title, time FROM posts ORDER BY postNo DESC LIMIT 10";
+				$stmt = $pdo->prepare($seek);
+				$stmt->execute();
+				while($row = $stmt->fetch()){
+					echo "<div id=\"thread-".$row["postNo"]."\">";
+					echo "<a href=\"thread.html\"><img src=\"images/city-park.jpg\"></a>";
+					echo "<div class=\"preview\">";
+					echo "<span>".$row["time"]."</span><br/>";
+					echo "<b>".$row["title"]."</b><br/>";
+					echo $row["msg"];
+					echo "</div></div>";
+				}	
+			closeConnection($pdo);
+			}catch(PDOException $e){
+				die($e->getMessage());
+			}
+			?>
 			  <div id="thread-8">
 			  	<a href=""><img src="images/city-park.jpg" alt=""></a>
 				<div class="preview"><b>Title Here</b><br/>
