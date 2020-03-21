@@ -46,7 +46,7 @@
 							$stmt->execute();
 							$rslt = $stmt->fetch();
 
-							//post info
+							//post info query
 							echo "<div id=\"post-user\"><b>".$rslt["username"]."</b> <time>".$rslt["time"]."</time></div>";
 							echo "<div class=\"post\">";
               echo "<img src=\"images/city-park.jpg\">";
@@ -54,44 +54,24 @@
               echo "<h1>".$rslt["title"]."</h1>";
               echo "<p>".$rslt["msg"]."</p>";
 							echo "</div></div>";
+
+							//replies query
+							$replies = "SELECT replies.replyNo, replies.replymsg, replies.image, replies.time, users.username FROM replies JOIN users ON users.userNo=replies.userNo WHERE postNo=".$_GET["p"]."";
+							$stmt2 = $pdo->prepare($replies);
+							$stmt2->execute();
+							while($row = $stmt2->fetch()){
+								echo "<div class=\"reply\" id=\"reply-".$row["replyNo"]."\" class=\"reply\">";
+								echo "<b>".$row["username"]."</b><time>".$row["time"]."</time>";
+								echo "<div class=\"reply-content\">";
+								echo "<p>".$row["replymsg"]."</p>";
+								echo "</div></div>";
+							}
 							closeConnection($pdo);
 						}catch(PDOException $e){
 							die($e->getMessage());
 						}
 					?>
-            <div class="reply" id="reply-1" class="reply">
-                <a href="#">Username</a> <time>24:00/01/01/2000</time>
-                <div class="reply-content">
-                    <p>This is a reply</p>
-                </div>
-            </div>
-            <div id="reply-2" class="reply">
-                <a href="#">Username</a> <time>24:00/01/01/2000</time>
-                <div class="reply-content">
-                    <p>This is a reply"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-                </div>
-            </div>
-            <div id="reply-3" class="reply">
-                <a href="#">Username</a> <time>24:00/01/01/2000</time>
-                <div class="reply-content">
-                    <p>This is a reply"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat. Duis aute irure dolor in reprehenderit in voluptate</p>
-                </div>
-            </div>
-            <div id="reply-4" class="reply">
-                <a href="#">Username</a> <time>24:00/01/01/2000</time>
-                <div class="reply-content">
-                    <p>This is a reply</p>
-                </div>
-            </div>
-            <div id="reply-5" class="reply">
-                <a href="#">Username</a> <time>24:00/01/01/2000</time>
-                <div class="reply-content">
-                    <p>This is a reply</p>
-                </div>
-            </div>
-        </div>
+         </div>
     </main>
     <footer>
         <div class="footer-content">
