@@ -1,18 +1,16 @@
 <?php
 include("dbconnect.php");
-try{
-	$pdo = dbConnect();
-	session_start();
-	$insert = "INSERT INTO posts (msg, img, userNo, title) VALUES (?,null,?,?)";
-	$stmt = $pdo->prepare($insert);
-	$stmt->bindValue(1, $_POST["postmsg"]);
-	$stmt->bindValue(2, $_SESSION["userNo"]);
-	$stmt->bindValue(3, $_POST["title"]);
-	$stmt->execute();
-	closeConnection($pdo);
-	header("Location: ../civiboard.php");
-}
-catch(PDOException $e){
-	die($e->getMessage());
-}
+$pdo = dbConnect();
+session_start();
+//handle file upload
+$insert = "INSERT INTO posts (msg, img, userNo, title) VALUES (?,?,?,?)";
+$stmt = $pdo->prepare($insert);
+$file = file_get_contents($_FILES["file"]["tmp_name"]);
+$stmt->bindParam(1, $_POST["postmsg"]);
+$stmt->bindParam(2, $file);	
+$stmt->bindParam(3, $_SESSION["userNo"]);
+$stmt->bindParam(4, $_POST["title"]);
+$stmt->execute();
+closeConnection($pdo);
+header("Location: ../civiboard.php");
 ?>

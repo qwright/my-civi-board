@@ -30,8 +30,9 @@
 		  <div id="post">
 				<button type="button" class="btn" id="post-btn">[Post a Thread]</button>
 				<div id="post-form" class="post-hid">
-				<form action="scripts/postthread.php" method="POST" name="submit-thread" id="post-thread">
+				<form action="scripts/postthread.php" method="POST" enctype="multipart/form-data" name="submit-thread" id="post-thread">
 					<input type="text" name="title" placeholder="title"></br>
+					<input type="file" name="file" id="file"></br>
 					<input type="submit" value="Submit" name="submit_thread">
 				</form>
 				<textarea rows="4" cols="50" name="postmsg" form="post-thread">Enter text here...</textarea>
@@ -47,7 +48,13 @@
 				$stmt->execute();
 				while($row = $stmt->fetch()){
 					echo "<div id=\"thread-".$row["postNo"]."\">";
-					echo "<a href=\"thread.php?p=".$row["postNo"]."\"><img src=\"images/city-park.jpg\"></a>";
+					echo "<a href=\"thread.php?p=".$row["postNo"]."\">";
+					if($row["img"]!=null){
+						$image = $row["img"];
+						echo "<img src=\"data:image/jpeg;base64,".base64_encode($image)."\"/></a>";
+					}else{
+						echo "<img src=\"images/city-park.jpg\"></a>";
+					}
 					echo "<div class=\"preview\">";
 					echo "<span>".$row["time"]."</span><br/>";
 					echo "<b>".$row["title"]."</b><br/>";
