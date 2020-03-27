@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles/styles.css" />
 
     <script src="js/script.js"></script>
-    <title>MyCiviBoard</title>
+		<title>MyCiviBoard</title>
     <link rel="icon" type="image/ico" href="images/logo.png" />
 </head>
 
@@ -23,7 +23,11 @@
 			$pdo=dbConnect();
 			if (isset($_SESSION["loggedin"])==true){
 				echo "<div class='profile-img'>";
-				echo "<a href=\"#\"><img src=\"images/no-user.png\" alt=\"no-user\"></a>";
+				if(!empty($_SESSION["userImg"])){
+					echo "<a href=\"#\"><img src=\"data:image/jpeg;base64,".base64_encode($_SESSION["userImg"])."\" alt=\"no-user\"></a>";	
+				}else{
+					echo "<a href=\"#\"><img src=\"images/no-user.png\" alt=\"no-user\"></a>";
+				}
 				echo "<div class='profile-dropdown'>";
 				echo "<p>";
 				echo "<a href='profile.php' class='loginbutton'>Profile Info</a>";

@@ -3,7 +3,7 @@ include("dbconnect.php");
 if(!empty($_POST["login"])){
 	try{
 		$pdo=dbConnect();
-		$sql = "SELECT userNo, username, pass FROM users WHERE username=? and pass=?";
+		$sql = "SELECT userNo, username, pass, img FROM users WHERE username=? and pass=?";
 		$statement = $pdo->prepare($sql);
 		$statement->bindValue(1,$_POST["user"]);
 		$statement->bindValue(2,$_POST["pass"]);
@@ -13,8 +13,8 @@ if(!empty($_POST["login"])){
 			$_SESSION["loggedin"] = true;
 			$_SESSION["username"] = $_POST["user"];
 			$user = $statement->fetch();
-			var_export($user);
 			$_SESSION["userNo"] = $user["userNo"];
+			$_SESSION["userImg"] = $user["img"];
 			closeConnection($pdo);	
 			header("Location: ../index.php");
 		}
