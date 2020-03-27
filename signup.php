@@ -24,7 +24,7 @@
                 </div>
                 <div class="login-form">
                     <div class="control-group">
-                        <form action="scripts/loginhandler.php" method="POST" name="login-form">
+                        <form action="scripts/loginhandler.php" method="POST" enctype="multipart/form-data" name="login-form">
                             <input type="text" name="firstName" class="login-field" value="" placeholder="first name" id="fName" required>
                     </div>
                     <div class="control-group">
@@ -38,7 +38,10 @@
                     </div>
                     <div class="control-group">
                         <input type="password" name="password" class="login-field" value="" placeholder="password" id="login-pass" required>
-                    </div>
+										</div>
+										<div class="control-group">
+											<input type="file" name="file">
+										</div>
 
                     <input type="submit" value="Sign Up" name="signup">
                     </form>
