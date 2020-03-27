@@ -484,3 +484,12 @@ figcaption {
     margin-left: 2em;
   }
 }
+/* Admin portal */
+
+#userInfo{
+	margin-top: 5em;
+}
+
+#userInfo th, td{
+	padding: 1em;
+}
