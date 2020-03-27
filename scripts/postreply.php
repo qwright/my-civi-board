@@ -3,7 +3,7 @@ include("dbconnect.php");
 try{
 	$pdo = dbConnect();
 	session_start();
-	$insert = "INSERT INTO replies (replymsg, image, postNo, userNo) VALUES (?, null, ?, ?)";
+	$insert = "INSERT INTO replies (replymsg, image, postNo, userNo, visibility) VALUES (?, null, ?, ?, 1)";
 	$stmt = $pdo->prepare($insert);
 	$stmt->bindValue(1, $_POST["replymsg"]);
 	$stmt->bindValue(2, $_GET["p"]);

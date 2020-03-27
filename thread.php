@@ -62,7 +62,7 @@
 							$stmt2->execute();
 							while($row = $stmt2->fetch()){
 								if($_SESSION["username"]=="admin"){
-									echo "<a href='deleteHandler.php?reply=".$row["replyNo"]."'>[delete]</a>";
+									echo "<a href='scripts/deletehandler.php?reply=".$row["replyNo"]."'>[delete]</a>";
 								}
 								echo "<div class=\"reply\" id=\"reply-".$row["replyNo"]."\" class=\"reply\">";
 								echo "<b>".$row["username"]." </b><time>".$row["time"]."</time>";
