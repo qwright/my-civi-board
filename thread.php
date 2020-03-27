@@ -41,6 +41,7 @@
 						include("scripts/dbconnect.php");
 						try{
 							$pdo = dbConnect();	
+							session_start();
 							$thread = "SELECT posts.postNo, posts.msg, posts.img, posts.userNo, posts.title, posts.time, users.username FROM users JOIN posts ON users.userNo=posts.userNo WHERE postNo=".$_GET["p"]."";
 							$stmt = $pdo->prepare($thread);
 							$stmt->execute();
@@ -56,12 +57,15 @@
 							echo "</div></div>";
 
 							//replies query
-							$replies = "SELECT replies.replyNo, replies.replymsg, replies.image, replies.time, users.username FROM replies JOIN users ON users.userNo=replies.userNo WHERE postNo=".$_GET["p"]."";
+							$replies = "SELECT replies.replyNo, replies.replymsg, replies.image, replies.time, users.username FROM replies JOIN users ON users.userNo=replies.userNo WHERE visibility=1 AND postNo=".$_GET["p"]."";
 							$stmt2 = $pdo->prepare($replies);
 							$stmt2->execute();
 							while($row = $stmt2->fetch()){
+								if($_SESSION["username"]=="admin"){
+									echo "<a href='deleteHandler.php?reply=".$row["replyNo"]."'>[delete]</a>";
+								}
 								echo "<div class=\"reply\" id=\"reply-".$row["replyNo"]."\" class=\"reply\">";
-								echo "<b>".$row["username"]."</b><time>".$row["time"]."</time>";
+								echo "<b>".$row["username"]." </b><time>".$row["time"]."</time>";
 								echo "<div class=\"reply-content\">";
 								echo "<p>".$row["replymsg"]."</p>";
 								echo "</div></div>";
