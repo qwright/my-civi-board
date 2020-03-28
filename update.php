@@ -60,7 +60,7 @@
                             $stmt = $pdo->prepare($sql);
                             $stmt->bindValue(1,$_SESSION["username"]);
                             $stmt->execute();
-                            header("Location: index.php");
+                            header("Location: signin.html");
                             }
                             else{
                             $sql = "SELECT * FROM users WHERE username = ?";
@@ -73,7 +73,6 @@
                             $lastName = $userInfo["lastName"];
                             $email = $userInfo["email"];
                             $password = $userInfo["password"];
-                            
                             echo "<div class='conatiner'>";
                             echo "<div class='profile'>";
                             echo "<div class='left-profile'>";
@@ -102,7 +101,7 @@
                             echo "<div class='info-title'><p>Password:</p></div>";
                             echo "<div class='input-content'><input name ='password' type='password' value=".$password."></div>";
                             echo "<div class='btn-space'>";
-                            echo "<input type = 'submit' name ='submit' value='Update'/>";
+                            echo "<input type ='submit' name ='submit' value='Update'/>";
                             echo "</form>";
                             echo "</div>";
                             echo "</div>";
