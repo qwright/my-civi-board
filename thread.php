@@ -63,7 +63,7 @@
 							echo "</div></div>";
 
 							//replies query
-							$replies = "SELECT replies.replyNo, replies.replymsg, replies.image, replies.time, users.username FROM replies JOIN users ON users.userNo=replies.userNo WHERE visibility=1 AND postNo=".$_GET["p"]."";
+							$replies = "SELECT replies.replyNo, replies.replymsg, replies.image, replies.time, users.username, users.status FROM replies JOIN users ON users.userNo=replies.userNo WHERE status=1 AND visibility=1 AND postNo=".$_GET["p"]."";
 							$stmt2 = $pdo->prepare($replies);
 							$stmt2->execute();
 							while($row = $stmt2->fetch()){

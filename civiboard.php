@@ -50,10 +50,13 @@
 			include("scripts/dbconnect.php");
 			try{
 				$pdo = dbConnect();
-				$seek = "SELECT postNo, msg, img, title, time FROM posts ORDER BY postNo DESC LIMIT 10";
+				$seek = "SELECT posts.postNo, posts.msg, posts.img, posts.title, posts.time, users.status FROM posts JOIN users ON posts.userNo = users.userNo WHERE users.status=1 ORDER BY postNo DESC LIMIT 10";
 				$stmt = $pdo->prepare($seek);
 				$stmt->execute();
 				while($row = $stmt->fetch()){
+					if($row["status"]!=1){
+						continue;
+					}
 					echo "<div id=\"thread-".$row["postNo"]."\">";
 					echo "<a href=\"thread.php?p=".$row["postNo"]."\">";
 					if($row["img"]!=null){

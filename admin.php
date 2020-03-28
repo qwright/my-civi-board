@@ -38,7 +38,7 @@
 			$users = $pdo->query("SELECT userNo, firstName, lastName, email, username, status from users");
 			while($row = $users->fetch()){
 				$status = ($row["status"]==0) ? "banned" : "active";
-				echo "<tr><td>".$row["userNo"]."</td><td>".$row["firstName"]." ".$row["lastName"]."</td><td>".$row["email"]."</td><td>".$row["username"]."</td><td>".$status."</td><td><a href=\"scripts/banuser.php=".$row["userNo"]."\">[Alter Status]</a></td></tr>";		
+				echo "<tr><td>".$row["userNo"]."</td><td>".$row["firstName"]." ".$row["lastName"]."</td><td>".$row["email"]."</td><td>".$row["username"]."</td><td>".$status."</td><td><a href=\"scripts/banuser.php?u=".$row["userNo"]."&s=".$row["status"]."\">[Alter Status]</a></td></tr>";
 			}
 			closeConnection($pdo);
 ?>
