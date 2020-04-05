@@ -20,29 +20,25 @@
         <div class="login">
             <div class="login-screen">
                 <div class="login-title">
-                    <h1>Hello, Welcome Back!</h1>
+                    <h4>Enter your Recovery Email</h4>
                 </div>
-
                 <div class="login-form">
                     <div class="control-group">
-                        <form action="scripts/loginhandler.php" method="POST" name="signup-form">
-                            <input type="text" class="login-field" name="user" placeholder="username" id="login-name" required>
+                        <form action="scripts/mailto.php" method="POST" enctype="multipart/form-data" name="password">
                     </div>
                     <div class="control-group">
-                        <input type="password" class="login-field" name="pass" placeholder="password" id="login-pass" required>
                     </div>
-                    <input type="submit" value="Login" name="login">
+                    <div class="control-group">
+                        <input type="text" name="username" class="login-field" value="" placeholder="username" id="login-name" required>
+                    </div>
+                    <div class="control-group">
+                        <input type="email" name="email" class="login-field" value="" placeholder="email" id="email" required>
+                    </div>
+
+                    <input type="submit" value="Send" name="Email">
                     </form>
-                    <div class="signup-link">
-                        <h5>Don't have an account? <a href="signup.php">Sign up now!</a></h5>
-                    </div>
-                    <div class="password-link">
-                        <h3><a href="sendmailform.php">Forgot Password</a></h3>
-                    </div>
                 </div>
             </div>
-            <br>
-        </div>
     </main>
     <footer>
         <div class="footer-content">
