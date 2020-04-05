@@ -31,7 +31,7 @@
     $mail->AddAddress($to, $name10);
     $mail->SetFrom("my-civi-board@gmail.com", "My Civi Board");
     $mail->Subject = "Password Recovery";
-    $content = '<p>Hello, your password is '.$pass.'.</p><p>Regards,</p><p>My Civi Board Team</p>';
+    $content = '<p>Hello, your password is '.$pass.'. You may now log in to myCiviBoard.</p><p>Regards,</p><p>My Civi Board Team</p>';
     $mail->MsgHTML($content); 
     if(!$mail->Send()) {
     echo "Error while sending Email.";

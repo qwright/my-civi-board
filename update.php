@@ -19,28 +19,7 @@
         </div>
         <?php
         //Check if the user is logged in with session. If a user is logged in, show a link to profile page
-        session_start();
-        $pdo=dbConnect();
-        if (isset($_SESSION["loggedin"])==true){
-            echo "<div class='profile-img'>";
-            echo "<a href=\"#\"><img src=\"images/no-user.png\" alt=\"no-user\"></a>";
-            echo "<div class='profile-dropdown'>";
-            echo "<p>";
-            echo "<a href='profile.php' class='loginbutton'>Profile Info</a>";
-            echo "</p>";
-            echo "</div>";
-            echo "</div>";
-        }
-        else{
-            echo "<div class='profile-img'>";
-            echo "<a href=\"#\"><img src=\"images/no-user.png\" alt=\"no-user\"></a>";
-            echo "<div class='profile-dropdown'>";
-            echo "<p>";
-            echo "<a href='signin.html' class='loginbutton'>Login/Sign Up</a>";
-            echo "</p>";
-            echo "</div>";
-            echo "</div>";
-        }
+        include("header.php");
         ?>
     </header>
     <main>

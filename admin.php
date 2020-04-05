@@ -14,7 +14,7 @@
       </div>
 			<div class='profile-img'>
 			<?php
-			session_start();
+			//session_start();
 			if(!empty($_SESSION["userImg"])){
 			echo "<a href=\"#\"><img src=\"data:image/jpeg;base64,".base64_encode($_SESSION["userImg"])."\" alt=\"no-user\"></a>";
 			}else{
