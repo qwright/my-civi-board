@@ -15,20 +15,18 @@
         <div class='logo'>
             <a href="index.php"><img src="images/civiboard_logoV1.png" alt="logo" width="250px"></a>
         </div>
-				<div class='profile-img'>
-						<?php
-			session_start();
+				
+			<?php
+			include("scripts/header.php");
+		
+			/*session_start();
 			if(!empty($_SESSION["userImg"])){
 			echo "<a href=\"#\"><img src=\"data:image/jpeg;base64,".base64_encode($_SESSION["userImg"])."\" alt=\"no-user\"></a>";
 			}else{
 				echo "<a href=\"#\"><img src=\"images/no-user.png\" alt=\"no-user\"></a>";
-			}
+			}*/ 
 		?>
-            <div class="profile-dropdown">
-                <p>
-                    <a href='signin.html' class="loginbutton">Login/Sign Up</a>
-                </p>
-            </div>
+            
         </div>
     </header>
 		<main>	

@@ -18,7 +18,7 @@
         </div>
             <?php
             include("scripts/dbconnect.php");
-            include("header.php");
+            include("scripts/header.php");
 			//Check if the user is logged in with session. If a user is logged in, show a link to profile page
 			
 			?>

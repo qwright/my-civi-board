@@ -15,6 +15,7 @@
 			<div class='profile-img'>
 			<?php
 			//session_start();
+			
 			if(!empty($_SESSION["userImg"])){
 			echo "<a href=\"#\"><img src=\"data:image/jpeg;base64,".base64_encode($_SESSION["userImg"])."\" alt=\"no-user\"></a>";
 			}else{
@@ -23,7 +24,7 @@
 		?>
             <div class="profile-dropdown">
                 <p>
-                    <a href='signin.html' class="loginbutton">Login/Sign Up</a>
+                    <a href='profile.php' class="loginbutton">Profile Info</a>
                 </p>
             </div>
         </div>

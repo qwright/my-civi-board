@@ -1,5 +1,5 @@
 <?php session_start();
-			$pdo=dbConnect();
+			//$pdo=dbConnect();
 			if (isset($_SESSION["loggedin"])==true){
                 if($_SESSION["username"]=="admin"){
                     echo "<div class='profile-img'>";
