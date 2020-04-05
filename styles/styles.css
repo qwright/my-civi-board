@@ -317,6 +317,11 @@ input:focus {
     padding-top: 2em;
 }
 
+.password-link a:link {
+    color: rgb(37, 128, 167);
+    padding-top: 2em;
+}
+
 .signup-link a:link {
     text-decoration: none;
     font-weight: bold;
