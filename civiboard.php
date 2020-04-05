@@ -33,8 +33,14 @@
     <div class="container">
 		<div class="profile-spacer" id="ps-1">
 		</div>
-      <div class="board-content">
+			<div class="board-content">
 		  <div id="post">
+			<span>
+				<a href="civiboard.php">[Catalog]</a>
+				<form action="civiboard.php" method="GET" name="filter-threads" id="filter">
+					<input type="text" name="search" placeholder="search threads..."><input type="submit" value="Filter">
+				</form>
+			</span>
 				<button type="button" class="btn" id="post-btn">[Post a Thread]</button>
 				<div id="post-form" class="post-hid">
 				<form action="scripts/postthread.php" method="POST" enctype="multipart/form-data" name="submit-thread" id="post-thread">
@@ -44,12 +50,13 @@
 				</form>
 				<textarea rows="4" cols="50" name="postmsg" form="post-thread">Enter text here...</textarea>
 				</div>
-		  </div>
+			 	</div>
 			<div class="thread-container">
 			<?php
 			include("scripts/dbconnect.php");
 			try{
 				$pdo = dbConnect();
+				if(empty($_GET["search"])){
 				$seek = "SELECT posts.postNo, posts.msg, posts.img, posts.title, posts.time, users.status FROM posts JOIN users ON posts.userNo = users.userNo WHERE users.status=1 ORDER BY postNo DESC LIMIT 10";
 				$stmt = $pdo->prepare($seek);
 				$stmt->execute();
@@ -70,10 +77,39 @@
 					echo "<b>".$row["title"]."</b><br/>";
 					echo $row["msg"];
 					echo "</div></div>";
-				}	
+						}
+					}
+					else{
+					$seek = "SELECT posts.postNo, posts.msg, posts.img, posts.title, posts.time, users.status FROM posts JOIN users ON posts.userNo = users.userNo WHERE users.status=1 AND posts.title LIKE '%".$_GET["search"]."%'ORDER BY postNo DESC LIMIT 10";
+					$stmt = $pdo->prepare($seek);
+					$stmt->execute();
+					if($stmt->rowCount()==0){
+					echo "<span>No threads to show!</span><br>";
+					echo "<img src=\"images/empty-search.jpg\"/>";
+					}
+					while($row = $stmt->fetch()){
+					if($row["status"]!=1){
+						continue;
+					}
+					echo "<div id=\"thread-".$row["postNo"]."\">";
+					echo "<a href=\"thread.php?p=".$row["postNo"]."\">";
+					if($row["img"]!=null){
+						$image = $row["img"];
+						echo "<img src=\"data:image/jpeg;base64,".base64_encode($image)."\"/></a>";
+					}else{
+						echo "<img src=\"images/city-park.jpg\"></a>";
+					}
+					echo "<div class=\"preview\">";
+					echo "<span>".$row["time"]."</span><br/>";
+					echo "<b>".$row["title"]."</b><br/>";
+					echo $row["msg"];
+					echo "</div></div>";
+					}	
+				}
 			closeConnection($pdo);
-			}catch(PDOException $e){
-				die($e->getMessage());
+				}catch(PDOException $e){
+					echo "No threads to show!";
+					echo "<img src=\"images/empty-search.jpg\"/>";
 			}
 			?>
 		  </div>
