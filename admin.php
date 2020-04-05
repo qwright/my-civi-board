@@ -30,7 +30,11 @@
 		</header>
 		<main id="userInfo">
 		<div>
-		<table>
+		<script src="scripts/script.js"></script>
+		<input type="text" id="filtertable" onkeyup="filterTable()" placeholder="Search for user...">
+		</div>
+		<div>
+		<table id="userInfoTable">
 			<tr><th>userNo</th><th>Name</th><th>email</th><th>userName</th><th>Status</th></tr>
 			<?php
 			include("scripts/dbconnect.php");
