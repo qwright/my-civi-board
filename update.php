@@ -54,13 +54,22 @@
                             $username = $_POST["username"];
                             $firstName = $_POST["firstName"]; 
                             $lastName = $_POST["lastName"];
-                            $email = $_POST["email"];
+														$email = $_POST["email"];
                             $password = $_POST["password"];
+														$image = file_get_contents($_FILES["userimage"]["tmp_name"]);
                             $sql = "UPDATE users SET firstName = '$firstName', lastName = '$lastName', pass = '$password', email = '$email', username = '$username' WHERE username = ?";
                             $stmt = $pdo->prepare($sql);
                             $stmt->bindValue(1,$_SESSION["username"]);
-                            $stmt->execute();
-                            header("Location: signin.html");
+														$stmt->execute();
+														if(!empty($image)){
+															$_SESSION["userImg"] = $image;
+															$imgupdate = "UPDATE users SET img=? WHERE username = ?";
+															$stmt2 = $pdo->prepare($imgupdate);
+															$stmt2->bindParam(1, $image);
+															$stmt2->bindParam(2, $_SESSION["username"]);
+															$stmt2->execute();
+														}
+                            header("Location: profile.php");
                             }
                             else{
                             $sql = "SELECT * FROM users WHERE username = ?";
@@ -82,14 +91,14 @@
                             echo "</div>";
                             echo "<div class='profile-photo'>";
                             echo "<figure>";
-                            echo "<img src='images/profile-image.png' width='100px'/>";
+														echo "<img src=\"data:image/jpeg;base64,".base64_encode($_SESSION["userImg"])."\" alt=\"no-image\" width='100px'/>";
                             echo "<figcaption>Avatar Picture</figcaption>";
                             echo "</figure>";
                             echo "</div>";
                             echo "</div>";
                             echo "</div>";
                             echo "<div class='right-profile'>";
-                            echo "<form action='update.php' method='POST' name='update-form'>";
+                            echo "<form action='update.php' method='POST' enctype=\"multipart/form-data\" name='update-form'>";
                             echo "<div class='info-title'><p>Username:</p></div>";
                             echo "<div class='input-content'><input name ='username' type='text' value=".$username."></div>";
                             echo "<div class='info-title'><p>First Name:</p></div>";
@@ -99,8 +108,10 @@
                             echo "<div class='info-title'><p>Email:</p></div>";
                             echo "<div class='input-content'><input name ='email' type='text' value=".$email."></div>";
                             echo "<div class='info-title'><p>Password:</p></div>";
-                            echo "<div class='input-content'><input name ='password' type='password' value=".$password."></div>";
-                            echo "<div class='btn-space'>";
+														echo "<div class='input-content'><input name ='password' type='password' value=".$password."></div>";
+														echo "<div class='info-title'><p>Profile Picture:</p></div>";
+														echo "<div class='input-content'><input type='file' name='userimage' id='userimage'/></div>";
+														echo "<div class='btn-space'>";
                             echo "<input type ='submit' name ='submit' value='Update'/>";
                             echo "</form>";
                             echo "</div>";

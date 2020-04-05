@@ -23,7 +23,7 @@
         $pdo=dbConnect();
         if (isset($_SESSION["loggedin"])==true){
             echo "<div class='profile-img'>";
-            echo "<a href=\"#\"><img src=\"images/no-user.png\" alt=\"no-user\"></a>";
+            echo "<a href=\"#\"><img src=\"data:image/jpeg;base64,".base64_encode($_SESSION["userImg"])."\" alt=\"no-user\"></a>";
             echo "<div class='profile-dropdown'>";
             echo "<p>";
             echo "<a href='profile.php' class='loginbutton'>Profile Info</a>";
@@ -63,7 +63,7 @@
                             echo "</div>";
                             echo "<div class='profile-photo'>";
                             echo "<figure>";
-                            echo "<img src='images/profile-image.png' width='100px'/>";
+            								echo "<a href=\"#\"><img src=\"data:image/jpeg;base64,".base64_encode($_SESSION["userImg"])."\" alt=\"no-user\"></a>";
                             echo "<figcaption>Avatar Picture</figcaption>";
                             echo "</figure>";
                             echo "</div>";
