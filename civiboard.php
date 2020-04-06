@@ -29,19 +29,19 @@
 			</p>
 		</div>
 		</div>
-    </header>
-    <div class="container">
+		</header>
+		<div id="filter-container">
+				<a href="civiboard.php">[Catalog]</a>
+				<form action="civiboard.php" method="GET" name="filter-threads" id="filter">
+					<input type="text" name="search" placeholder="search threads...">
+				</form>
+			</div>
+		<div class="container">
 		<div class="profile-spacer" id="ps-1">
 		</div>
 			<div class="board-content">
-		  <div id="post">
-			<span>
-				<a href="civiboard.php">[Catalog]</a>
-				<form action="civiboard.php" method="GET" name="filter-threads" id="filter">
-					<input type="text" name="search" placeholder="search threads..."><input type="submit" value="Filter">
-				</form>
-			</span>
-				<button type="button" class="btn" id="post-btn">[Post a Thread]</button>
+					  <div id="post">
+							<button type="button" class="btn" id="post-btn">[Post a Thread]</button>
 				<div id="post-form" class="post-hid">
 				<form action="scripts/postthread.php" method="POST" enctype="multipart/form-data" name="submit-thread" id="post-thread">
 					<input type="text" name="title" placeholder="title"></br>

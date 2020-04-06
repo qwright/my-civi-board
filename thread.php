@@ -57,7 +57,7 @@
 							//post info query
 							echo "<div id=\"post-user\"><b>".$rslt["username"]."</b> <time>".$rslt["time"]."</time></div>";
 							echo "<div class=\"post\">";
-              echo "<img src=\"images/city-park.jpg\">";
+              echo "<img src=\"data:images/jpeg;base64,".base64_encode($rslt["img"])."\">";
               echo "<div>";
               echo "<h1>".$rslt["title"]."</h1>";
               echo "<p>".$rslt["msg"]."</p>";
