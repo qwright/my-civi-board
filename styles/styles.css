@@ -151,6 +151,13 @@ input[type="submit"]:hover {
     justify-content: center;
 }
 
+.hot-thread img{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 50px;
+}
+
 #post {
     align-self: center;
     text-align: center;
@@ -167,6 +174,7 @@ input[type="submit"]:hover {
     height: 330px;
     width: 182px;
     word-wrap: break-word;
+		position: relative;
     overflow: hidden;
 }
 

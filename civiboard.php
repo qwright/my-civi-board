@@ -67,9 +67,10 @@
 					if($row["status"]!=1){
 						continue;
 					}
-					echo "<div id=\"thread-".$row["postNo"]."\"";
-					if(in_array($row["postNo"], $hotthreads)){echo " class=\"hot-thread\"";}
-					echo ">";
+					echo "<div id=\"thread-".$row["postNo"]."\">";
+					if(in_array($row["postNo"], $hotthreads)){
+						echo "<div class=\"hot-thread\"><img src=\"images/hot.png\"/></div>";
+					}
 					echo "<a href=\"thread.php?p=".$row["postNo"]."\">";
 					if($row["img"]!=null){
 						$image = $row["img"];
