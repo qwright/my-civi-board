@@ -19,7 +19,7 @@
         </div>
         <?php
         //Check if the user is logged in with session. If a user is logged in, show a link to profile page
-        include("header.php");
+        include("scripts/header.php");
         ?>
     </header>
     <main>

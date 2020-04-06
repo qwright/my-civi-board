@@ -12,8 +12,8 @@ header {
     top: 0;
     text-align: right;
     width: 100%;
-		/*z index fixes some relative postitioning while maintaining sticky header */
-		z-index: 100;
+    /*z index fixes some relative postitioning while maintaining sticky header */
+    z-index: 100;
     /*box-shadow: 3px 3px 10px rgb(61, 61, 61); */
 }
 
@@ -140,9 +140,11 @@ input[type="submit"]:hover {
     display: block;
 }
 
-#filter-container{
-		margin-top: 5em;
-	}
+#filter-container {
+    margin-top: 5em;
+}
+
+
 /* board content*/
 
 .board-content {
@@ -151,18 +153,18 @@ input[type="submit"]:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-		align-items: flex-start;
+    align-items: flex-start;
 }
 
 #filter {
-		display: inline;
+    display: inline;
 }
 
-.hot-thread img{
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	width: 50px;
+.hot-thread img {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 50px;
 }
 
 #post {
@@ -180,7 +182,7 @@ input[type="submit"]:hover {
     height: 330px;
     width: 182px;
     word-wrap: break-word;
-		position: relative;
+    position: relative;
     overflow: hidden;
 }
 
@@ -520,4 +522,9 @@ figcaption {
 #userInfo th,
 td {
     padding: 1em;
+}
+
+.canvas-container {
+    width: 30em;
+    float: left;
 }
