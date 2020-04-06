@@ -18,13 +18,6 @@
 				
 			<?php
 			include("scripts/header.php");
-		
-			/*session_start();
-			if(!empty($_SESSION["userImg"])){
-			echo "<a href=\"#\"><img src=\"data:image/jpeg;base64,".base64_encode($_SESSION["userImg"])."\" alt=\"no-user\"></a>";
-			}else{
-				echo "<a href=\"#\"><img src=\"images/no-user.png\" alt=\"no-user\"></a>";
-			}*/ 
 		?>
             
         </div>

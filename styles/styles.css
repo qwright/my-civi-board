@@ -507,3 +507,8 @@ figcaption {
 td {
     padding: 1em;
 }
+
+.canvas-container {
+    width: 30em;
+    float: left;
+}
