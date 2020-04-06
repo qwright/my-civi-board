@@ -33,6 +33,7 @@
     </header>
 		<main>	
 				<div class="board-container">
+				<span><a href="civiboard.php">[back]</a></span>
 					<div id="reply">		
 						<button type="button" class="btn" id="reply-btn">[Post a reply]</button>
 						<div id="reply-form" class="post-hid">
@@ -56,7 +57,7 @@
 							//post info query
 							echo "<div id=\"post-user\"><b>".$rslt["username"]."</b> <time>".$rslt["time"]."</time></div>";
 							echo "<div class=\"post\">";
-              echo "<img src=\"images/city-park.jpg\">";
+              echo "<img src=\"data:images/jpeg;base64,".base64_encode($rslt["img"])."\">";
               echo "<div>";
               echo "<h1>".$rslt["title"]."</h1>";
               echo "<p>".$rslt["msg"]."</p>";
