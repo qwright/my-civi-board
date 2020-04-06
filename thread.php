@@ -33,6 +33,7 @@
     </header>
 		<main>	
 				<div class="board-container">
+				<span><a href="civiboard.php">[back]</a></span>
 					<div id="reply">		
 						<button type="button" class="btn" id="reply-btn">[Post a reply]</button>
 						<div id="reply-form" class="post-hid">
