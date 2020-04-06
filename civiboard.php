@@ -56,15 +56,20 @@
 			include("scripts/dbconnect.php");
 			try{
 				$pdo = dbConnect();
+				$hotseek = $pdo->prepare("SELECT p.postNo, COUNT(r.time) from posts p JOIN users u ON p.userNo = u.userNo JOIN replies r ON p.postNo = r.postNo WHERE r.visibility=1 AND r.time >= now() - INTERVAL 1 DAY GROUP BY p.postNo HAVING COUNT(r.time) >= 3 ORDER BY p.postNo");
+				$hotseek->execute();
+				$hotthreads = $hotseek->fetchAll(PDO::FETCH_COLUMN,0);
 				if(empty($_GET["search"])){
-				$seek = "SELECT posts.postNo, posts.msg, posts.img, posts.title, posts.time, users.status FROM posts JOIN users ON posts.userNo = users.userNo WHERE users.status=1 ORDER BY postNo DESC LIMIT 10";
+				$seek = "SELECT p.postNo, p.msg, p.img, p.title, p.time, u.status, MAX(r.time) FROM posts p LEFT OUTER JOIN users u ON p.userNo = u.userNo LEFT OUTER JOIN replies r on p.postNo = r.postNo WHERE u.status=1 GROUP BY p.postNo ORDER BY MAX(r.time) desc LIMIT 10";
 				$stmt = $pdo->prepare($seek);
 				$stmt->execute();
 				while($row = $stmt->fetch()){
 					if($row["status"]!=1){
 						continue;
 					}
-					echo "<div id=\"thread-".$row["postNo"]."\">";
+					echo "<div id=\"thread-".$row["postNo"]."\"";
+					if(in_array($row["postNo"], $hotthreads)){echo " class=\"hot-thread\"";}
+					echo ">";
 					echo "<a href=\"thread.php?p=".$row["postNo"]."\">";
 					if($row["img"]!=null){
 						$image = $row["img"];
