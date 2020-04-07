@@ -50,6 +50,10 @@ header {
     text-decoration: none;
 }
 
+.menubutton:hover {
+    background-color: rgb(37, 128, 167)
+}
+
 .menuspace {
     margin-top: 30px;
 }
