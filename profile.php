@@ -42,7 +42,7 @@
                             echo "</div>";
                             echo "<div class='profile-photo'>";
                             echo "<figure>";
-            								echo "<a href=\"#\"><img src=\"data:image/jpeg;base64,".base64_encode($_SESSION["userImg"])."\" alt=\"no-user\"></a>";
+            				echo "<a href=\"#\"><img src=\"data:image/jpeg;base64,".base64_encode($_SESSION["userImg"])."\" alt=\"no-user\"></a>";
                             echo "<figcaption>Avatar Picture</figcaption>";
                             echo "</figure>";
                             echo "</div>";
@@ -64,6 +64,25 @@
                             echo "<form><button formaction='update.php' class ='btn'>Update Information</button></form>";
                             echo "</div>";
                             echo "</div>";
+                            echo "<div class='post-profile'>";
+                            echo "<div class='name'>";
+                            echo "<h1>Post History</h1>";
+                            echo "</div>";
+                            $sql2 = "SELECT users.username, posts.msg, posts.title, posts.time FROM users JOIN posts ON users.userNo=posts.userNo WHERE username = ? ORDER BY posts.time DESC";
+                            $stmt2 = $pdo -> prepare($sql2);
+                            $stmt2 ->bindValue(1,$_SESSION["username"]);
+                            $stmt2 ->execute();
+                            while($row = $stmt2->fetch()){
+                            echo "<div class='info-title'>  </div>";
+                            echo "<div class='post-content'>";
+                            echo "<div class='post-title'><h1>Post Title: </h1></div>".$row['title'];
+                            echo "<div class='post-title'><h1>Post Content: </h1></div>".$row['msg'];
+                            echo "<div class='post-title'><h1>Time: </h1></div>".$row['time'];
+                            echo "</div>";
+                            }
+                            echo "</div>";
+                            
+                            
                         }
                         catch(PDOException $e){
                             die($e->getMessage());
