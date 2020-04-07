@@ -33,13 +33,25 @@ header {
     position: absolute;
     display: none;
     right: 0em;
-    top: 5em;
+    top: 4.5em;
     background-color: white;
     min-width: 180px;
-    height: 3em;
-    padding: 1em;
-    text-align: center;
+    height: 7em;
+    padding: 0.5em;
+    text-align: left;
     z-index: 1;
+}
+
+.menubutton {
+    background-color: #29abe2;
+    padding: 10px;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.menuspace {
+    margin-top: 30px;
 }
 
 .profile-img:hover .profile-dropdown {
