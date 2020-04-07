@@ -42,7 +42,7 @@
                             echo "</div>";
                             echo "<div class='profile-photo'>";
                             echo "<figure>";
-            				echo "<a href=\"#\"><img src=\"data:image/jpeg;base64,".base64_encode($_SESSION["userImg"])."\" alt=\"no-user\"></a>";
+            				echo "<a href=\"#\"><img src=\"data:image/jpeg;base64,".base64_encode($_SESSION["userImg"])."\" alt=\"no-user\" class='profile-image' width=200px></a>";
                             echo "<figcaption>Avatar Picture</figcaption>";
                             echo "</figure>";
                             echo "</div>";

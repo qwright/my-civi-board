@@ -38,10 +38,10 @@
                     </div>
                     <div class="control-group">
                         <input type="password" name="password" class="login-field" value="" placeholder="password" id="login-pass" required>
-										</div>
-										<div class="control-group">
-											<input type="file" name="file">
-										</div>
+					</div>
+					<div class="control-group">
+						<input type="file" name="file">
+					</div>
 
                     <input type="submit" value="Sign Up" name="signup">
                     </form>

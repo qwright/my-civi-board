@@ -17,16 +17,30 @@ header {
     /*box-shadow: 3px 3px 10px rgb(61, 61, 61); */
 }
 
+a {
+    color: #29abe2;
+}
+
+a:visited {
+    color: #29abe2;
+}
+
 .profile-img {
     position: relative;
     float: right;
     width: 5%;
+    border-radius: 50%;
+}
+
+.profile-image {
+    border-radius: 50%;
 }
 
 .profile-img>a>img {
     margin-right: 2em;
     height: 4em;
     padding-top: 0.5em;
+    border-radius: 50%;
 }
 
 .profile-dropdown {
@@ -48,6 +62,10 @@ header {
     color: white;
     border-radius: 5px;
     text-decoration: none;
+}
+
+a.menubutton {
+    color: white;
 }
 
 .menubutton:hover {
@@ -157,7 +175,18 @@ input[type="submit"]:hover {
 }
 
 #filter-container {
-    margin-top: 5em;
+    margin-top: 5.5em;
+}
+
+#post-form textarea {
+    resize: none;
+    border: 5px;
+    border-color: rgb(70, 69, 69);
+    width: 20%;
+}
+
+#post-thread>input {
+    width: 20%;
 }
 
 
@@ -170,6 +199,7 @@ input[type="submit"]:hover {
     flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
+    overflow: auto;
 }
 
 #filter {
@@ -212,7 +242,24 @@ input[type="submit"]:hover {
 }
 
 .preview {
-    margin-top: 1em;
+    color: rgb(70, 69, 69);
+}
+
+.preview#text {
+    font-weight: bold;
+}
+
+.preview>span {
+    font-size: 0.8em;
+}
+
+.preview>b {
+    font-weight: bold;
+    color: rgb(19, 27, 73);
+}
+
+.msg {
+    font-weight: bold;
 }
 
 #board #ps-1 {
@@ -372,6 +419,20 @@ input:focus {
 
 /*Thread*/
 
+#reply-thread>textarea {
+    resize: none;
+    border: 5px;
+    border-color: rgb(70, 69, 69);
+}
+
+#reply-form {
+    text-align: center;
+}
+
+#reply-thread>input {
+    width: 10%;
+}
+
 .board-container {
     margin-top: 5em;
     min-height: 50em;
@@ -383,16 +444,16 @@ input:focus {
     margin: 0em 1em;
     margin-bottom: 0;
     width: 90%;
+    color: rgb(70, 69, 69);
 }
 
 #post-user {
     margin-left: 1.25em;
+    color: rgb(70, 69, 69);
 }
 
-#post-user a {
-    color: #444;
+#post-user b {
     font-weight: bold;
-    text-decoration: none;
 }
 
 .post img {
@@ -412,21 +473,26 @@ input:focus {
 }
 
 .reply {
-    background-color: white;
     display: table;
     min-height: 5em;
     margin: 0.5em;
-    margin-left: 4em;
+    color: rgb(70, 69, 69);
 }
 
 .reply a {
-    color: #878787;
-    font-weight: bold;
+    color: #29abe2;
     text-decoration: none;
 }
 
+.reply>b {
+    font-weight: bold;
+}
+
 .reply-content {
+    background-color: white;
+    margin-top: 0.2em;
     padding: 2em;
+    border-radius: 5px;
 }
 
 .btn {

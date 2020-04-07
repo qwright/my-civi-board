@@ -70,7 +70,7 @@
                             echo "</div>";
                             echo "<div class='profile-photo'>";
                             echo "<figure>";
-														echo "<img src=\"data:image/jpeg;base64,".base64_encode($_SESSION["userImg"])."\" alt=\"no-image\" width='100px'/>";
+														echo "<img src=\"data:image/jpeg;base64,".base64_encode($_SESSION["userImg"])."\" alt=\"no-image\" class='profile-image' width='200px'/>";
                             echo "<figcaption>Avatar Picture</figcaption>";
                             echo "</figure>";
                             echo "</div>";

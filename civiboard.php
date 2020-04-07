@@ -36,9 +36,11 @@
 				<form action="scripts/postthread.php" method="POST" enctype="multipart/form-data" name="submit-thread" id="post-thread">
 					<input type="text" name="title" placeholder="title"></br>
 					<input type="file" name="file" id="file"></br>
+					<textarea rows="4" cols="36" name="postmsg" form="post-thread">Enter text here...</textarea>
+					<br>
 					<input type="submit" value="Submit" name="submit_thread">
 				</form>
-				<textarea rows="4" cols="50" name="postmsg" form="post-thread">Enter text here...</textarea>
+				
 				</div>
 			 	</div>
 			<div class="thread-container">
@@ -96,9 +98,9 @@
 						echo "<img src=\"images/city-park.jpg\"></a>";
 					}
 					echo "<div class=\"preview\">";
-					echo "<span>".$row["time"]."</span><br/>";
+					echo "<span>".$row["time"]."</span>";
 					echo "<b>".$row["title"]."</b><br/>";
-					echo $row["msg"];
+					echo "<div class='msg'>".$row["msg"]."</div><br/>";
 					echo "</div></div>";
 					}	
 				}

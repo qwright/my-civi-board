@@ -26,7 +26,7 @@
 		?>
             <div class="profile-dropdown">
                 <p>
-                    <a href='profile.php' class="loginbutton">Profile Info</a>
+                    <a href='profile.php' class="menubutton">Profile Info</a>
                 </p>
             </div>
         </div>

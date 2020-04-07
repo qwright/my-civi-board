@@ -31,9 +31,12 @@
 						<?php 
 						echo "<form action=\"scripts/postreply.php?p=".$_GET["p"]."\" method='POST' name='submit-reply' id='reply-thread'>"
 						?>
+							<textarea rows="4" cols="30" name="replymsg" form="reply-thread"></textarea>
+							<br>
 							<input type="submit" value="Submit" name="submit_thread">
+							
 				</form>
-				<textarea rows="4" cols="50" name="replymsg" form="reply-thread">Enter text here...</textarea>
+				
 				</div>
 					</div>
 					<?php
@@ -59,14 +62,18 @@
 							$stmt2 = $pdo->prepare($replies);
 							$stmt2->execute();
 							while($row = $stmt2->fetch()){
-								if($_SESSION["username"]=="admin"){
-									echo "<a href='scripts/deletehandler.php?reply=".$row["replyNo"]."'>[delete]</a>";
-								}
+								
+								
 								echo "<div class=\"reply\" id=\"reply-".$row["replyNo"]."\" class=\"reply\">";
 								echo "<b>".$row["username"]." </b><time>".$row["time"]."</time>";
 								echo "<div class=\"reply-content\">";
-								echo "<p>".$row["replymsg"]."</p>";
-								echo "</div></div>";
+								echo "<p>".$row["replymsg"]."</p></div>";
+								//if(isset($_SESSION["loggedin"])==true){
+									if($_SESSION["username"]=="admin"){
+										echo "<a href='scripts/deletehandler.php?reply=".$row["replyNo"]."'>[delete]</a>";
+									}
+								//}
+								echo "</div>";
 							}
 							closeConnection($pdo);
 						}catch(PDOException $e){
