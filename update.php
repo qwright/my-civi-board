@@ -47,8 +47,14 @@
 															$stmt2->bindParam(1, $image);
 															$stmt2->bindParam(2, $_SESSION["username"]);
 															$stmt2->execute();
-														}
-                            header("Location: profile.php");
+                            }
+                            echo "<br>";
+                            echo"<br>";
+                            echo "<div class='btn-space'>";
+                            echo "<form><button formaction='signin.html' class='btn'>Sign In</button></form>";
+                            echo "</div>";
+                            echo "<br>";
+                            echo "<br>";
                             }
                             else{
                             $sql = "SELECT * FROM users WHERE username = ?";

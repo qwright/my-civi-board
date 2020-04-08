@@ -25,7 +25,7 @@
     <main>
                         <?php
                         try{
-                            session_start();
+                            //session_start();
                             $pdo=dbConnect();
                             //$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                             $sql = "SELECT * FROM users WHERE username=?";
